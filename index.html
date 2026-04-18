@@ -1261,37 +1261,209 @@
   </script>
 
 
-  <script>
-    // ── DESTINATION POOL (25 total) ──────────────────────────────────────────
+<script>
     const DESTINATIONS = [
-      // Original 5
-      { name: 'Serengeti, Tanzania', region: 'Eastern Africa', tag: 'Adventure + Luxury', desc: 'Witness the Great Migration from private bush camps at the edge of the world's most dramatic wildlife spectacle — guided by naturalists with decades of field experience.', photo: 'https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=1600&q=80', href: 'serengeti.html' },
-      { name: 'Amalfi Coast, Italy', region: 'Western Europe', tag: 'Luxury + Cultural', desc: 'Terraced cliffs above the Tyrrhenian Sea, private villa pools, and a coastal cuisine built on century-old traditions — the Amalfi at its most intimate.', photo: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=80', href: 'amalfi.html' },
-      { name: 'Patagonia, Chile', region: 'South America', tag: 'Adventure', desc: 'The end of the world — granite towers, glacial lakes, and trekking routes so remote that the only sounds are wind and condors.', photo: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1600&q=80', href: 'patagonia.html' },
-      { name: 'Kyoto, Japan', region: 'East Asia', tag: 'Cultural + Luxury', desc: 'Thousand-year-old temples, ryokan tea ceremony mornings, and bamboo groves that exist in a time zone of their own.', photo: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=80', href: 'kyoto.html' },
-      { name: 'Sahara, Morocco', region: 'North Africa', tag: 'Adventure + Cultural', desc: 'Erg Chebbi dunes at dusk, Berber camp under 5,000 stars, and a silence so complete it registers as a physical sensation.', photo: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1600&q=80', href: 'sahara.html' },
-      // 20 new destinations
-      { name: 'Santorini, Greece', region: 'Southern Europe', tag: 'Luxury + Romance', desc: 'Clifftop villas carved into the caldera rim, private catamaran sunsets, and volcanic wine that has no equivalent anywhere else on Earth.', photo: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1600&q=80', href: 'santorini.html' },
-      { name: 'Bali, Indonesia', region: 'Southeast Asia', tag: 'Cultural + Wellness', desc: 'Sacred temple ceremonies at dawn, terraced rice fields before the tour buses arrive, and a living Hindu culture that shapes every hour of the day.', photo: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=80', href: 'bali.html' },
-      { name: 'Machu Picchu, Peru', region: 'South America', tag: 'Adventure + Historical', desc: 'First-entry access at 6 AM, a private archaeologist guide, and the Inca Trail with a chef and a personal porter ratio that makes the 43km feel civilized.', photo: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1600&q=80', href: 'machu-picchu.html' },
-      { name: 'Iceland', region: 'Northern Europe', tag: 'Adventure + Nature', desc: 'A helicopter descent into a dormant volcano, aurora hunting in the Westfjords, and a glacier hike led by a glaciologist who has mapped its retreat for 20 years.', photo: 'https://images.unsplash.com/photo-1520769945061-0a448c463865?auto=format&fit=crop&w=1600&q=80', href: 'iceland.html' },
-      { name: 'The Maldives', region: 'Indian Ocean', tag: 'Luxury + Diving', desc: 'Overwater villas above a living reef, whale shark encounters in South Ari Atoll, and manta aggregations in a UNESCO marine biosphere reserve.', photo: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1600&q=80', href: 'maldives.html' },
-      { name: 'Marrakech, Morocco', region: 'North Africa', tag: 'Cultural + Luxury', desc: 'Private riad courtyards silent from the medina outside, early access to the Chouara tannery, and Atlas Mountain day trips before the heat builds.', photo: 'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?auto=format&fit=crop&w=1600&q=80', href: 'marrakech.html' },
-      { name: 'Queenstown, New Zealand', region: 'South Pacific', tag: 'Adventure + Luxury', desc: 'Heli-ski drops on backcountry glaciers, a private overnight charter in Milford Sound, and a landscape that looks designed by someone who had never seen restraint.', photo: 'https://images.unsplash.com/photo-1469521669194-babb45599def?auto=format&fit=crop&w=1600&q=80', href: 'queenstown.html' },
-      { name: 'Ha Long Bay, Vietnam', region: 'Southeast Asia', tag: 'Adventure + Cultural', desc: 'A private junk charter through 1,969 limestone islands, kayaking into tidal sea caves accessible for 40 minutes per day, and a floating village that has never left the water.', photo: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1600&q=80', href: 'halong-bay.html' },
-      { name: 'Costa Rica', region: 'Central America', tag: 'Adventure + Eco', desc: 'Five percent of all life on Earth, an active volcano at dawn, and surf breaks that require local knowledge and a dirt road to reach.', photo: 'https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?auto=format&fit=crop&w=1600&q=80', href: 'costa-rica.html' },
-      { name: 'Norwegian Fjords', region: 'Northern Europe', tag: 'Adventure + Nature', desc: 'A private sailing yacht through UNESCO Nærøyfjord, Preikestolen at sunrise before the tour buses arrive, and a landscape carved by two million years of glacial patience.', photo: 'https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1600&q=80', href: 'norway.html' },
-      { name: 'Lisbon, Portugal', region: 'Western Europe', tag: 'Cultural + Luxury', desc: 'The city that launched the age of exploration, a private fado concert in a 14th-century monastery, and a Douro Valley wine route with the winemaker as your guide.', photo: 'https://images.unsplash.com/photo-1585208798174-6cedd4b09e42?auto=format&fit=crop&w=1600&q=80', href: 'lisbon.html' },
-      { name: 'Thailand', region: 'Southeast Asia', tag: 'Cultural + Adventure', desc: 'Royal temples before the crowds, hill tribe villages in Chiang Mai accessible only to those who go on foot, and Andaman island clusters on a private catamaran.', photo: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1600&q=80', href: 'thailand.html' },
-      { name: 'Cape Town, South Africa', region: 'Southern Africa', tag: 'Adventure + Cultural', desc: 'Table Mountain before the cable car opens, great white shark cage diving at Dyer Island, and a Cape Winelands route with a sommelier who has lived in it for 20 years.', photo: 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=1600&q=80', href: 'cape-town.html' },
-      { name: 'Scottish Highlands', region: 'Northern Europe', tag: 'Adventure + Cultural', desc: 'Glencoe in morning mist before the hikers arrive, private whisky distilleries that accept no public tours, and a castle that was a family home until 1987.', photo: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80', href: 'scotland.html' },
-      { name: 'Rajasthan, India', region: 'South Asia', tag: 'Cultural + Luxury', desc: 'Private dinner with a maharaja in his still-occupied palace, a tiger reserve with a tracker who knows specific animals by name, and three nights crossing the Thar Desert by camel.', photo: 'https://images.unsplash.com/photo-1524492412937-b28074a47d70?auto=format&fit=crop&w=1600&q=80', href: 'rajasthan.html' },
-      { name: 'Nepal', region: 'South Asia', tag: 'Adventure + Cultural', desc: 'Everest Base Camp with a Sherpa family guide, a private aircraft circuit of eight 8,000-meter peaks at sunrise, and Buddhist monasteries at 4,000 meters that predate the tourist trail by centuries.', photo: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1600&q=80', href: 'nepal.html' },
-      { name: 'Tuscany, Italy', region: 'Western Europe', tag: 'Luxury + Culinary', desc: 'Truffle hunting at dawn with a third-generation tartufaio, pre-opening access to the Uffizi with a private art historian, and a Brunello estate that does not accept public reservations.', photo: 'https://images.unsplash.com/photo-1467269204594-f27b12e7bab5?auto=format&fit=crop&w=1600&q=80', href: 'tuscany.html' },
-      { name: 'Dubai, UAE', region: 'Middle East', tag: 'Luxury + Urban', desc: 'Breakfast at 122 floors, a private helicopter circuit of the Palm, and a night in the Empty Quarter desert with no artificial light within 200 kilometers.', photo: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=80', href: 'dubai.html' },
-      { name: 'Petra, Jordan', region: 'Middle East', tag: 'Cultural + Historical', desc: 'The Treasury at 6 AM with no other visitors, a Wadi Rum desert overnight under Milky Way visibility, and 800 rock-carved structures with an archaeologist who excavated them.', photo: 'https://images.unsplash.com/photo-1548438294-1ad5d5f4f063?auto=format&fit=crop&w=1600&q=80', href: 'petra.html' },
-      { name: 'Cartagena, Colombia', region: 'South America', tag: 'Cultural + Luxury', desc: 'The most beautiful colonial walls in the Americas, private sailing through the Rosario Islands, and a culinary scene that Colombia's Nobel laureate called the country's greatest achievement.', photo: 'https://images.unsplash.com/photo-1583001308071-e326303ed53c?auto=format&fit=crop&w=1600&q=80', href: 'cartagena.html' },
-    ];
+  {
+    "name": "Serengeti, Tanzania",
+    "region": "Eastern Africa",
+    "tag": "Adventure + Luxury",
+    "desc": "Witness the Great Migration from private bush camps at the edge of the world’s most dramatic wildlife spectacle — guided by naturalists with decades of field experience.",
+    "photo": "https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=1600&q=80",
+    "href": "serengeti.html"
+  },
+  {
+    "name": "Amalfi Coast, Italy",
+    "region": "Western Europe",
+    "tag": "Luxury + Cultural",
+    "desc": "Terraced cliffs above the Tyrrhenian Sea, private villa pools, and a coastal cuisine built on century-old traditions — the Amalfi at its most intimate.",
+    "photo": "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=80",
+    "href": "amalfi.html"
+  },
+  {
+    "name": "Patagonia, Chile",
+    "region": "South America",
+    "tag": "Adventure",
+    "desc": "The end of the world — granite towers, glacial lakes, and trekking routes so remote that the only sounds are wind and condors.",
+    "photo": "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1600&q=80",
+    "href": "patagonia.html"
+  },
+  {
+    "name": "Kyoto, Japan",
+    "region": "East Asia",
+    "tag": "Cultural + Luxury",
+    "desc": "Thousand-year-old temples, ryokan tea ceremony mornings, and bamboo groves that exist in a time zone of their own.",
+    "photo": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=80",
+    "href": "kyoto.html"
+  },
+  {
+    "name": "Sahara, Morocco",
+    "region": "North Africa",
+    "tag": "Adventure + Cultural",
+    "desc": "Erg Chebbi dunes at dusk, Berber camp under 5,000 stars, and a silence so complete it registers as a physical sensation.",
+    "photo": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1600&q=80",
+    "href": "sahara.html"
+  },
+  {
+    "name": "Santorini, Greece",
+    "region": "Southern Europe",
+    "tag": "Luxury + Romance",
+    "desc": "Clifftop villas carved into the caldera rim, private catamaran sunsets, and volcanic wine that has no equivalent anywhere else on Earth.",
+    "photo": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1600&q=80",
+    "href": "santorini.html"
+  },
+  {
+    "name": "Bali, Indonesia",
+    "region": "Southeast Asia",
+    "tag": "Cultural + Wellness",
+    "desc": "Sacred temple ceremonies at dawn, terraced rice fields before the tour buses arrive, and a living Hindu culture that shapes every hour of the day.",
+    "photo": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=80",
+    "href": "bali.html"
+  },
+  {
+    "name": "Machu Picchu, Peru",
+    "region": "South America",
+    "tag": "Adventure + Historical",
+    "desc": "First-entry access at 6 AM, a private archaeologist guide, and the Inca Trail with a chef and a porter ratio that makes the 43km feel civilized.",
+    "photo": "https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1600&q=80",
+    "href": "machu-picchu.html"
+  },
+  {
+    "name": "Iceland",
+    "region": "Northern Europe",
+    "tag": "Adventure + Nature",
+    "desc": "A helicopter descent into a dormant volcano, aurora hunting in the Westfjords, and a glacier hike led by a glaciologist who has mapped its retreat for 20 years.",
+    "photo": "https://images.unsplash.com/photo-1520769945061-0a448c463865?auto=format&fit=crop&w=1600&q=80",
+    "href": "iceland.html"
+  },
+  {
+    "name": "The Maldives",
+    "region": "Indian Ocean",
+    "tag": "Luxury + Diving",
+    "desc": "Overwater villas above a living reef, whale shark encounters in South Ari Atoll, and manta aggregations in a UNESCO marine biosphere reserve.",
+    "photo": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1600&q=80",
+    "href": "maldives.html"
+  },
+  {
+    "name": "Marrakech, Morocco",
+    "region": "North Africa",
+    "tag": "Cultural + Luxury",
+    "desc": "Private riad courtyards silent from the medina outside, early access to the Chouara tannery, and Atlas Mountain day trips before the heat builds.",
+    "photo": "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?auto=format&fit=crop&w=1600&q=80",
+    "href": "marrakech.html"
+  },
+  {
+    "name": "Queenstown, New Zealand",
+    "region": "South Pacific",
+    "tag": "Adventure + Luxury",
+    "desc": "Heli-ski drops on backcountry glaciers, a private overnight charter in Milford Sound, and a landscape that looks designed by someone who had never seen restraint.",
+    "photo": "https://images.unsplash.com/photo-1469521669194-babb45599def?auto=format&fit=crop&w=1600&q=80",
+    "href": "queenstown.html"
+  },
+  {
+    "name": "Ha Long Bay, Vietnam",
+    "region": "Southeast Asia",
+    "tag": "Adventure + Cultural",
+    "desc": "A private junk charter through 1,969 limestone islands, kayaking into tidal sea caves accessible for 40 minutes per day, and a floating village that has never left the water.",
+    "photo": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1600&q=80",
+    "href": "halong-bay.html"
+  },
+  {
+    "name": "Costa Rica",
+    "region": "Central America",
+    "tag": "Adventure + Eco",
+    "desc": "Five percent of all life on Earth, an active volcano at dawn, and surf breaks that require local knowledge and a dirt road to reach.",
+    "photo": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?auto=format&fit=crop&w=1600&q=80",
+    "href": "costa-rica.html"
+  },
+  {
+    "name": "Norwegian Fjords",
+    "region": "Northern Europe",
+    "tag": "Adventure + Nature",
+    "desc": "A private sailing yacht through UNESCO Naeroyfjord, Preikestolen at sunrise before the tour buses arrive, and a landscape carved by two million years of glacial patience.",
+    "photo": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1600&q=80",
+    "href": "norway.html"
+  },
+  {
+    "name": "Lisbon, Portugal",
+    "region": "Western Europe",
+    "tag": "Cultural + Luxury",
+    "desc": "The city that launched the age of exploration, a private fado concert in a 14th-century monastery, and a Douro Valley wine route with the winemaker as your guide.",
+    "photo": "https://images.unsplash.com/photo-1585208798174-6cedd4b09e42?auto=format&fit=crop&w=1600&q=80",
+    "href": "lisbon.html"
+  },
+  {
+    "name": "Thailand",
+    "region": "Southeast Asia",
+    "tag": "Cultural + Adventure",
+    "desc": "Royal temples before the crowds, hill tribe villages in Chiang Mai accessible only on foot, and Andaman island clusters on a private catamaran.",
+    "photo": "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1600&q=80",
+    "href": "thailand.html"
+  },
+  {
+    "name": "Cape Town, South Africa",
+    "region": "Southern Africa",
+    "tag": "Adventure + Cultural",
+    "desc": "Table Mountain before the cable car opens, great white shark cage diving at Dyer Island, and a Cape Winelands route with a sommelier who has lived there for 20 years.",
+    "photo": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=1600&q=80",
+    "href": "cape-town.html"
+  },
+  {
+    "name": "Scottish Highlands",
+    "region": "Northern Europe",
+    "tag": "Adventure + Cultural",
+    "desc": "Glencoe in morning mist before the hikers arrive, private whisky distilleries that accept no public tours, and a castle that was a family home until 1987.",
+    "photo": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80",
+    "href": "scotland.html"
+  },
+  {
+    "name": "Rajasthan, India",
+    "region": "South Asia",
+    "tag": "Cultural + Luxury",
+    "desc": "Private dinner with a maharaja in his still-occupied palace, a tiger reserve with a tracker who knows specific animals by name, and three nights crossing the Thar Desert by camel.",
+    "photo": "https://images.unsplash.com/photo-1524492412937-b28074a47d70?auto=format&fit=crop&w=1600&q=80",
+    "href": "rajasthan.html"
+  },
+  {
+    "name": "Nepal",
+    "region": "South Asia",
+    "tag": "Adventure + Cultural",
+    "desc": "Everest Base Camp with a Sherpa family guide, a private aircraft circuit of eight 8,000-meter peaks at sunrise, and Buddhist monasteries at 4,000 meters that predate the tourist trail.",
+    "photo": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1600&q=80",
+    "href": "nepal.html"
+  },
+  {
+    "name": "Tuscany, Italy",
+    "region": "Western Europe",
+    "tag": "Luxury + Culinary",
+    "desc": "Truffle hunting at dawn with a third-generation tartufaio, pre-opening access to the Uffizi with a private art historian, and a Brunello estate that does not accept public reservations.",
+    "photo": "https://images.unsplash.com/photo-1467269204594-f27b12e7bab5?auto=format&fit=crop&w=1600&q=80",
+    "href": "tuscany.html"
+  },
+  {
+    "name": "Dubai, UAE",
+    "region": "Middle East",
+    "tag": "Luxury + Urban",
+    "desc": "Breakfast at 122 floors, a private helicopter circuit of the Palm, and a night in the Empty Quarter with no artificial light within 200 kilometers.",
+    "photo": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=80",
+    "href": "dubai.html"
+  },
+  {
+    "name": "Petra, Jordan",
+    "region": "Middle East",
+    "tag": "Cultural + Historical",
+    "desc": "The Treasury at 6 AM with no other visitors, a Wadi Rum desert overnight under Milky Way visibility, and 800 rock-carved structures with an archaeologist who excavated them.",
+    "photo": "https://images.unsplash.com/photo-1548438294-1ad5d5f4f063?auto=format&fit=crop&w=1600&q=80",
+    "href": "petra.html"
+  },
+  {
+    "name": "Cartagena, Colombia",
+    "region": "South America",
+    "tag": "Cultural + Luxury",
+    "desc": "The most beautiful colonial walls in the Americas, private sailing through the Rosario Islands, and a culinary scene that earned its first Michelin recognition in 2023.",
+    "photo": "https://images.unsplash.com/photo-1583001308071-e326303ed53c?auto=format&fit=crop&w=1600&q=80",
+    "href": "cartagena.html"
+  }
+];
 
     function shuffle(arr) {
       const a = [...arr];
@@ -1305,10 +1477,10 @@
     function renderDestinations() {
       const picked = shuffle(DESTINATIONS).slice(0, 5);
       const grid = document.getElementById('destinations-grid');
+      if (!grid) return;
       grid.innerHTML = picked.map((d, i) => `
         <a href="${d.href}" class="dest-card" style="display:block;text-decoration:none;color:inherit;">
-          <div class="dest-card-img" style="background-image:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,0.88) 100%),url('${d.photo}');background-size:cover;background-position:center;">
-          </div>
+          <div class="dest-card-img" style="background-image:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,0.88) 100%),url('${d.photo}');background-size:cover;background-position:center;min-height:260px;"></div>
           <div class="dest-card-content">
             <p class="dest-region">${d.region}</p>
             <h3 class="dest-name">${d.name}</h3>
@@ -1316,9 +1488,26 @@
             <span class="dest-tag">${d.tag}</span>
           </div>
         </a>`).join('');
+
+      // Re-apply IntersectionObserver to newly rendered cards
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'translateY(0)';
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      grid.querySelectorAll('.dest-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+        obs.observe(el);
+      });
     }
 
-    document.addEventListener('DOMContentLoaded', renderDestinations);
+    renderDestinations();
   </script>
 </body>
 </html>
