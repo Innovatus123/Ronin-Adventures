@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patagonia, Chile — Ronin Adventures</title>
+  <meta name="description" content="Trekking the Torres del Paine, glacier crossings, and wilderness camps at the end of the world. Ronin Adventures designs bespoke Patagonia expeditions for serious explorers." />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://roninadventures.com/patagonia.html" />
+  <meta property="og:title" content="Patagonia, Chile — Ronin Adventures" />
+  <meta property="og:description" content="Torres del Paine, glacier crossings, and wilderness camps at the end of the world. Patagonia built for serious explorers." />
+  <meta property="og:image" content="https://roninadventures.com/og-patagonia.jpg" />
+  <meta property="og:site_name" content="Ronin Adventures" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Patagonia, Chile — Ronin Adventures" />
+  <meta name="twitter:description" content="Torres del Paine, glacier crossings, and wilderness camps at the end of the world." />
+  <meta name="twitter:image" content="https://roninadventures.com/og-patagonia.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a; --dark: #111111; --card: #181818;
+      --gold: #c9a84c; --gold-lt: #e8c76a; --white: #f4f4f4;
+      --muted: #888888; --border: rgba(255,255,255,0.08);
+      --ff-head: 'Bebas Neue', sans-serif; --ff-body: 'Montserrat', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: var(--ff-body); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(10,10,10,0.96); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); transition: padding 0.4s ease; }
+    nav.scrolled { padding: 0.85rem 4rem; }
+    .nav-logo { font-family: var(--ff-head); font-size: 1.6rem; letter-spacing: 0.12em; color: var(--gold); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); transition: color 0.25s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 0.35rem; }
+    .nav-dropdown > a::after { content: '▾'; font-size: 0.6rem; transition: transform 0.25s; }
+    .nav-dropdown:hover > a::after { transform: rotate(180deg); }
+    .dropdown-menu { position: absolute; top: calc(100% + 1.1rem); left: 50%; transform: translateX(-50%) translateY(6px); min-width: 200px; background: rgba(16,16,16,0.97); border: 1px solid var(--border); border-top: 2px solid var(--gold); backdrop-filter: blur(16px); border-radius: 0 0 2px 2px; padding: 0.5rem 0; opacity: 0; visibility: hidden; transition: opacity 0.22s ease, visibility 0.22s ease, transform 0.22s ease; z-index: 200; }
+    .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .dropdown-menu a { display: flex; align-items: center; gap: 0.75rem; padding: 0.7rem 1.25rem; font-size: 0.72rem; letter-spacing: 0.14em; color: rgba(244,244,244,0.75) !important; transition: color 0.2s, background 0.2s; white-space: nowrap; }
+    .dropdown-menu a:hover { color: var(--gold) !important; background: rgba(201,168,76,0.07); }
+    .dd-icon { font-size: 0.95rem; width: 18px; text-align: center; }
+    .nav-cta { background: var(--gold); color: var(--black) !important; padding: 0.55rem 1.4rem; border-radius: 2px; font-weight: 700; transition: background 0.25s !important; }
+    .nav-cta:hover { background: var(--gold-lt) !important; }
+    .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-burger span { display: block; width: 26px; height: 2px; background: var(--white); }
+
+    .dest-hero { position: relative; height: 90vh; min-height: 600px; display: flex; align-items: flex-end; overflow: hidden; }
+    .dest-hero-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.85) 100%), url('https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1800&q=80'); background-size: cover; background-position: center; }
+    .dest-hero-content { position: relative; z-index: 2; padding: 0 4rem 5rem; width: 100%; }
+    .dest-breadcrumb { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .dest-breadcrumb a { color: var(--gold); opacity: 0.7; }
+    .dest-breadcrumb a:hover { opacity: 1; }
+    .dest-hero-region { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(244,244,244,0.6); margin-bottom: 0.75rem; }
+    .dest-hero-title { font-family: var(--ff-head); font-size: clamp(4rem, 8vw, 7rem); line-height: 0.92; letter-spacing: 0.03em; text-transform: uppercase; color: var(--white); margin-bottom: 1.5rem; }
+    .dest-hero-title span { color: var(--gold); }
+    .dest-hero-tags { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .dest-hero-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; background: var(--gold); color: var(--black); padding: 0.35rem 0.9rem; border-radius: 1px; }
+    .dest-hero-icon { position: absolute; right: 8%; top: 50%; transform: translateY(-50%); font-size: 9rem; opacity: 0.12; pointer-events: none; }
+
+    section { padding: 6rem 4rem; }
+    .section-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+    .section-tag::before { content: ''; display: inline-block; width: 28px; height: 2px; background: var(--gold); }
+    .section-title { font-family: var(--ff-head); font-size: clamp(2.5rem, 4.5vw, 4rem); line-height: 0.95; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 1.5rem; }
+
+    #overview { background: var(--dark); border-top: 1px solid var(--border); }
+    .overview-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: start; }
+    .overview-body { font-size: 0.95rem; font-weight: 300; color: rgba(244,244,244,0.72); line-height: 1.85; margin-bottom: 2rem; }
+    .overview-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .o-stat { background: var(--card); border: 1px solid var(--border); padding: 1.5rem; border-top: 2px solid var(--gold); }
+    .o-stat-num { font-family: var(--ff-head); font-size: 2.4rem; color: var(--gold); letter-spacing: 0.05em; }
+    .o-stat-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-top: 0.25rem; }
+    .info-blocks { display: flex; flex-direction: column; gap: 1.5rem; }
+    .info-block { background: var(--card); border: 1px solid var(--border); padding: 1.75rem; }
+    .info-block-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+    .info-block-value { font-size: 0.88rem; color: var(--white); font-weight: 600; margin-bottom: 0.35rem; }
+    .info-block-note { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+
+    #highlights { background: var(--black); }
+    .highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--border); margin-top: 3rem; }
+    .highlight-card { background: var(--card); padding: 2.25rem 2rem; position: relative; overflow: hidden; }
+    .highlight-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--gold); transition: width 0.4s; }
+    .highlight-card:hover::after { width: 100%; }
+    .h-icon { font-size: 2rem; margin-bottom: 1.25rem; display: block; }
+    .h-title { font-family: var(--ff-head); font-size: 1.3rem; letter-spacing: 0.06em; color: var(--white); margin-bottom: 0.65rem; }
+    .h-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
+
+    #itinerary { background: var(--dark); border-top: 1px solid var(--border); }
+    .itinerary-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 1px; background: var(--border); }
+    .itin-item { background: var(--card); display: grid; grid-template-columns: 80px 1fr; gap: 2rem; align-items: start; padding: 2rem 2rem 2rem 0; }
+    .itin-day { font-family: var(--ff-head); font-size: 2.5rem; color: var(--gold); letter-spacing: 0.05em; text-align: center; padding-left: 2rem; }
+    .itin-title { font-family: var(--ff-head); font-size: 1.2rem; letter-spacing: 0.06em; color: var(--white); margin-bottom: 0.5rem; }
+    .itin-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
+
+    #experience-types { background: var(--black); }
+    .exp-type-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .exp-type-card { background: var(--card); border: 1px solid var(--border); padding: 2rem; display: flex; gap: 1.25rem; align-items: flex-start; transition: border-color 0.3s; }
+    .exp-type-card:hover { border-color: var(--gold); }
+    .exp-type-icon { font-size: 1.75rem; flex-shrink: 0; }
+    .exp-type-title { font-family: var(--ff-head); font-size: 1.1rem; letter-spacing: 0.06em; color: var(--white); margin-bottom: 0.4rem; }
+    .exp-type-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.65; }
+    .exp-type-link { display: inline-block; margin-top: 0.75rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+
+    #dest-cta { background: var(--gold); padding: 6rem 4rem; text-align: center; }
+    .cta-title { font-family: var(--ff-head); font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 0.95; letter-spacing: 0.04em; text-transform: uppercase; color: var(--black); margin-bottom: 1.25rem; }
+    .cta-sub { font-size: 0.95rem; color: rgba(0,0,0,0.65); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.75; }
+    .btn-dark { background: var(--black); color: var(--gold); font-family: var(--ff-body); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 1rem 2.5rem; border: none; border-radius: 2px; cursor: pointer; transition: background 0.25s, transform 0.2s; display: inline-block; }
+    .btn-dark:hover { background: #1f1f1f; transform: translateY(-2px); }
+
+    footer { background: var(--black); border-top: 1px solid var(--border); padding: 3.5rem 4rem 2rem; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+    .footer-brand { font-family: var(--ff-head); font-size: 1.6rem; letter-spacing: 0.12em; color: var(--gold); }
+    .footer-nav { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-nav a { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); transition: color 0.25s; }
+    .footer-nav a:hover { color: var(--gold); }
+    .footer-copy { font-size: 0.72rem; color: var(--muted); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1.25rem 1.5rem; } nav.scrolled { padding: 0.85rem 1.5rem; }
+      .nav-links { display: none; } .nav-burger { display: flex; }
+      .dest-hero-content { padding: 0 1.5rem 4rem; } .dest-hero-icon { display: none; }
+      section { padding: 4rem 1.5rem; }
+      .overview-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .highlights-grid { grid-template-columns: 1fr; }
+      .exp-type-grid { grid-template-columns: 1fr; }
+      #dest-cta { padding: 4rem 1.5rem; }
+      footer { padding: 2.5rem 1.5rem 1.5rem; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">RONIN<span style="color:var(--white);opacity:0.4"> / </span>ADVENTURES</a>
+    <ul class="nav-links">
+      <li><a href="index.html#destinations" class="active">Destinations</a></li>
+      <li class="nav-dropdown">
+        <a href="index.html#pillars">What We Do</a>
+        <div class="dropdown-menu">
+          <a href="adventure.html"><span class="dd-icon">⛰️</span>Adventure Travel</a>
+          <a href="luxury.html"><span class="dd-icon">🏛️</span>Luxury Escapes</a>
+          <a href="cultural.html"><span class="dd-icon">🌏</span>Cultural Journeys</a>
+          <a href="international.html"><span class="dd-icon">✈️</span>International</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="#">Experiences</a>
+        <div class="dropdown-menu">
+          <a href="adventure.html"><span class="dd-icon">⛰️</span>Adventure Travel</a>
+          <a href="luxury.html"><span class="dd-icon">🏛️</span>Luxury Escapes</a>
+          <a href="cultural.html"><span class="dd-icon">🌏</span>Cultural Journeys</a>
+          <a href="international.html"><span class="dd-icon">✈️</span>International</a>
+        </div>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="book.html" class="nav-cta">Book Now</a></li>
+    </ul>
+    <div class="nav-burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div id="mobile-nav" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(10,10,10,0.98);padding:6rem 2rem 2rem;flex-direction:column;gap:2rem;">
+    <a href="index.html#destinations" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;letter-spacing:0.08em;color:var(--white);">Destinations</a>
+    <div style="display:flex;flex-direction:column;gap:0.85rem;">
+      <a href="index.html#pillars" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;letter-spacing:0.08em;color:var(--white);">What We Do</a>
+      <a href="adventure.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">⛰️ &nbsp;Adventure</a>
+      <a href="luxury.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">🏛️ &nbsp;Luxury</a>
+      <a href="cultural.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">🌏 &nbsp;Cultural</a>
+      <a href="international.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">✈️ &nbsp;International</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0.85rem;">
+      <span style="font-family:var(--ff-head);font-size:2.5rem;color:var(--white);">Experiences</span>
+      <a href="adventure.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">⛰️ &nbsp;Adventure</a>
+      <a href="luxury.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">🏛️ &nbsp;Luxury</a>
+      <a href="cultural.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">🌏 &nbsp;Cultural</a>
+      <a href="international.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">✈️ &nbsp;International</a>
+    </div>
+    <a href="contact.html" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;color:var(--white);">Contact</a>
+    <a href="book.html" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;color:var(--gold);">Book Now</a>
+    <button onclick="toggleMenu()" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;">✕</button>
+  </div>
+
+  <div class="dest-hero">
+    <div class="dest-hero-bg"></div>
+    <div class="dest-hero-icon">🌋</div>
+    <div class="dest-hero-content">
+      <p class="dest-breadcrumb">
+        <a href="index.html">Home</a> <span>›</span>
+        <a href="index.html#destinations">Destinations</a> <span>›</span>
+        <span style="opacity:1;">Patagonia</span>
+      </p>
+      <p class="dest-hero-region">South America · Chile & Argentina</p>
+      <h1 class="dest-hero-title">Patagonia,<br><span>Chile</span></h1>
+      <div class="dest-hero-tags">
+        <span class="dest-hero-tag">Adventure</span>
+        <span class="dest-hero-tag">Wilderness</span>
+        <span class="dest-hero-tag">Trekking</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="overview">
+    <div class="overview-grid">
+      <div>
+        <p class="section-tag">Destination Overview</p>
+        <h2 class="section-title">The End of<br>the World.</h2>
+        <p class="overview-body">
+          Patagonia occupies the southern tip of South America — a 1,000-kilometer stretch of granite spires, ancient glaciers, turquoise lakes, and winds that can end a trek in minutes. It is extreme terrain that demands serious preparation and rewards the effort with landscapes unlike anything else on Earth.
+        </p>
+        <p class="overview-body">
+          Torres del Paine National Park anchors the Chilean side: three granite towers rising 2,800 meters from the steppe, an ice field covering 2,300 square kilometers, and trails that have tested the best trekkers in the world. We design routes for every level — and we secure the camp reservations months in advance that most travelers can't get.
+        </p>
+        <div class="overview-stats">
+          <div class="o-stat">
+            <div class="o-stat-num">2,800m</div>
+            <div class="o-stat-label">Torres del Paine peaks</div>
+          </div>
+          <div class="o-stat">
+            <div class="o-stat-num">2,300km²</div>
+            <div class="o-stat-label">Southern Patagonian Ice Field</div>
+          </div>
+          <div class="o-stat">
+            <div class="o-stat-num">180</div>
+            <div class="o-stat-label">km/h wind gusts possible</div>
+          </div>
+          <div class="o-stat">
+            <div class="o-stat-num">4</div>
+            <div class="o-stat-label">Seasons in one day, typically</div>
+          </div>
+        </div>
+      </div>
+      <div class="info-blocks">
+        <div class="info-block">
+          <p class="info-block-label">Best Time to Visit</p>
+          <p class="info-block-value">November – March</p>
+          <p class="info-block-note">Southern Hemisphere summer. December and January bring the longest days. November and March offer smaller crowds with full access to trails and camps.</p>
+        </div>
+        <div class="info-block">
+          <p class="info-block-label">Duration</p>
+          <p class="info-block-value">8 – 14 days recommended</p>
+          <p class="info-block-note">5-day W-Trek for focused trekkers. 8-day O-Circuit for full circumnavigation. We build custom routes for groups who want to go beyond the marked trails.</p>
+        </div>
+        <div class="info-block">
+          <p class="info-block-label">Physical Requirements</p>
+          <p class="info-block-value">Moderate to strenuous</p>
+          <p class="info-block-note">W-Trek requires reasonable fitness. Full O-Circuit is demanding. We offer luxury lodge alternatives with day hikes for guests who prefer comfort over camping.</p>
+        </div>
+        <div class="info-block">
+          <p class="info-block-label">Getting There</p>
+          <p class="info-block-value">Punta Arenas Airport (PUQ)</p>
+          <p class="info-block-note">Fly Santiago to Punta Arenas or Puerto Natales. We handle all internal transfers, gear logistics, and park permit reservations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="highlights">
+    <p class="section-tag">What We Include</p>
+    <h2 class="section-title">Patagonia<br>Highlights</h2>
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <span class="h-icon">🏔️</span>
+        <h3 class="h-title">Torres del Paine Base</h3>
+        <p class="h-desc">The signature trek to the base of the three towers at sunrise — a 4am departure, headlamps on trail, rewarded by one of the most arresting views on the planet as light hits the granite.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="h-icon">🧊</span>
+        <h3 class="h-title">Glacier Trekking</h3>
+        <p class="h-desc">Strap on crampons and walk across the Grey Glacier — blue ice formations, crevasses, and seracs. A certified glacier guide leads every crossing on private excursions.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="h-icon">🚣</span>
+        <h3 class="h-title">Kayaking the Fjords</h3>
+        <p class="h-desc">Paddle through the Fjords of Chilean Patagonia — channels carved by glaciers, seal colonies on floating ice, and skies so clean the stars are disorienting at night.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="h-icon">🦅</span>
+        <h3 class="h-title">Condor & Wildlife Tracking</h3>
+        <p class="h-desc">Andean condors with 3-meter wingspans ride thermals above the steppe. Guanacos, pumas, and Darwin's rhea in terrain unchanged for thousands of years.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="h-icon">🏕️</span>
+        <h3 class="h-title">Private Wilderness Camps</h3>
+        <p class="h-desc">We secure private camp sites in restricted areas of the park, away from public trekking corridors. Hot meals, premium sleeping equipment, and a chef in the wilderness.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="h-icon">🌊</span>
+        <h3 class="h-title">Tierra del Fuego Extension</h3>
+        <p class="h-desc">Continue south to the literal end of the world — Ushuaia, Argentina. Beagle Channel navigation, penguin colonies, and the sub-Antarctic ecosystem at the southern tip of the Americas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="itinerary">
+    <p class="section-tag">Sample Journey</p>
+    <h2 class="section-title">10 Days in<br>Patagonia.</h2>
+    <div class="itinerary-list">
+      <div class="itin-item">
+        <div class="itin-day">01</div>
+        <div>
+          <h3 class="itin-title">Arrive Punta Arenas</h3>
+          <p class="itin-desc">Private transfer to Puerto Natales. Gear check, route briefing, and acclimation dinner at a local estancia with southern Patagonian lamb and Chilean wine.</p>
+        </div>
+      </div>
+      <div class="itin-item">
+        <div class="itin-day">02</div>
+        <div>
+          <h3 class="itin-title">Enter Torres del Paine</h3>
+          <p class="itin-desc">Private vehicle transfer into the park. Afternoon hike to Lago Grey viewpoint. First night in premium private camp with glacier views across the lake.</p>
+        </div>
+      </div>
+      <div class="itin-item">
+        <div class="itin-day">03</div>
+        <div>
+          <h3 class="itin-title">Grey Glacier Crossing</h3>
+          <p class="itin-desc">Full-day glacier trek with certified guide. Crampons on blue ice, lunch inside a natural ice shelter. Return to camp by boat across Lago Grey.</p>
+        </div>
+      </div>
+      <div class="itin-item">
+        <div class="itin-day">04–06</div>
+        <div>
+          <h3 class="itin-title">W-Trek Circuit</h3>
+          <p class="itin-desc">Three days on the iconic W-Trek — Valle del Francés, Mirador Británico, and the Cuernos del Paine. Private guide, premium camp at each stop, all meals included.</p>
+        </div>
+      </div>
+      <div class="itin-item">
+        <div class="itin-day">07</div>
+        <div>
+          <h3 class="itin-title">Torres Sunrise Hike</h3>
+          <p class="itin-desc">4am departure. Headlamps up the Ascencio Valley. Arrive at the mirador as alpenglow hits the granite towers. Worth every step. Return to lodge for full lunch and rest.</p>
+        </div>
+      </div>
+      <div class="itin-item">
+        <div class="itin-day">08–10</div>
+        <div>
+          <h3 class="itin-title">Fjords Kayak & Tierra del Fuego</h3>
+          <p class="itin-desc">Two-day guided kayak through Chilean fjords. Optional extension to Ushuaia for Beagle Channel navigation and penguin colony visits before return flight from Punta Arenas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience-types">
+    <p class="section-tag">How to Book This Trip</p>
+    <h2 class="section-title">This Journey<br>Fits Into.</h2>
+    <div class="exp-type-grid">
+      <a href="adventure.html" class="exp-type-card">
+        <div class="exp-type-icon">⛰️</div>
+        <div>
+          <h3 class="exp-type-title">Adventure Travel</h3>
+          <p class="exp-type-desc">Patagonia is the definitive adventure destination. Glacier crossings, 4am summit approaches, fjord kayaking, and weather that tests every plan. Built for those who want it real.</p>
+          <span class="exp-type-link">Explore Adventure →</span>
+        </div>
+      </a>
+      <a href="international.html" class="exp-type-card">
+        <div class="exp-type-icon">✈️</div>
+        <div>
+          <h3 class="exp-type-title">International Travel</h3>
+          <p class="exp-type-desc">Spanning Chile and Argentina, Patagonia is a multi-country circuit. We handle all cross-border logistics, permits, and domestic flight connections seamlessly.</p>
+          <span class="exp-type-link">Explore International →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="dest-cta">
+    <h2 class="cta-title">Ready for<br>Patagonia?</h2>
+    <p class="cta-sub">Tell us your fitness level, travel window, and what kind of challenge you're after — we'll build the right route.</p>
+    <a href="book.html?type=adventure" class="btn-dark">Start Planning</a>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">RONIN ADVENTURES</div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="adventure.html">Adventure</a>
+        <a href="luxury.html">Luxury</a>
+        <a href="cultural.html">Cultural</a>
+        <a href="international.html">International</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <p class="footer-copy">© 2026 Ronin Adventures. All rights reserved. &nbsp;|&nbsp; Website by <a href="https://ronin.digital" target="_blank" style="color:var(--gold);">Ronin Digital</a></p>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
+    function toggleMenu() { const m = document.getElementById('mobile-nav'); m.style.display = m.style.display === 'flex' ? 'none' : 'flex'; }
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; observer.unobserve(e.target); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.highlight-card, .itin-item, .o-stat, .info-block, .exp-type-card').forEach(el => { el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity 0.55s ease, transform 0.55s ease'; observer.observe(el); });
+  </script>
+</body>
+</html>

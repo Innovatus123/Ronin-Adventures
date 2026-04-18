@@ -4,6 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cultural Journeys — Ronin Adventures</title>
+  <meta name="description" content="Artisan workshops, private heritage sites, indigenous community stays, and culinary immersions across 30+ cultures. Ronin Adventures delivers authentic local access unavailable to average travelers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://roninadventures.com/cultural.html" />
+  <meta property="og:title" content="Cultural Journeys — Ronin Adventures" />
+  <meta property="og:description" content="Artisan workshops, private heritage sites, and culinary immersions across 30+ cultures. Authentic access — not the tourist version." />
+  <meta property="og:image" content="https://roninadventures.com/og-cultural.jpg" />
+  <meta property="og:site_name" content="Ronin Adventures" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cultural Journeys — Ronin Adventures" />
+  <meta name="twitter:description" content="Artisan workshops, private heritage sites, and culinary immersions across 30+ cultures. Authentic access — not the tourist version." />
+  <meta name="twitter:image" content="https://roninadventures.com/og-cultural.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -130,7 +141,15 @@
     <a href="index.html" class="nav-logo">RONIN<span style="color:var(--white);opacity:0.4"> / </span>ADVENTURES</a>
     <ul class="nav-links">
       <li><a href="index.html#destinations">Destinations</a></li>
-      <li><a href="index.html#pillars">What We Do</a></li>
+      <li class="nav-dropdown">
+        <a href="index.html#pillars">What We Do</a>
+        <div class="dropdown-menu">
+          <a href="adventure.html"><span class="dd-icon">⛰️</span>Adventure Travel</a>
+          <a href="luxury.html"><span class="dd-icon">🏛️</span>Luxury Escapes</a>
+          <a href="cultural.html"><span class="dd-icon">🌏</span>Cultural Journeys</a>
+          <a href="international.html"><span class="dd-icon">✈️</span>International</a>
+        </div>
+      </li>
       <li class="nav-dropdown">
         <a href="#">Experiences</a>
         <div class="dropdown-menu">
@@ -141,14 +160,20 @@
         </div>
       </li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="contact.html" class="nav-cta">Book Now</a></li>
+      <li><a href="book.html" class="nav-cta">Book Now</a></li>
     </ul>
     <div class="nav-burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </nav>
 
   <div id="mobile-nav" style="display:none; position:fixed; inset:0; z-index:999; background:rgba(10,10,10,0.98); padding:6rem 2rem 2rem; flex-direction:column; gap:2rem; overflow-y:auto;">
     <a href="index.html#destinations" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;letter-spacing:0.08em;color:var(--white);">Destinations</a>
-    <a href="index.html#pillars" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;letter-spacing:0.08em;color:var(--white);">What We Do</a>
+    <div style="display:flex;flex-direction:column;gap:0.85rem;">
+      <a href="index.html#pillars" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;letter-spacing:0.08em;color:var(--white);">What We Do</a>
+      <a href="adventure.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">⛰️ &nbsp;Adventure</a>
+      <a href="luxury.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">🏛️ &nbsp;Luxury</a>
+      <a href="cultural.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">🌏 &nbsp;Cultural</a>
+      <a href="international.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">✈️ &nbsp;International</a>
+    </div>
     <div style="display:flex;flex-direction:column;gap:0.85rem;">
       <span style="font-family:var(--ff-head);font-size:2.5rem;letter-spacing:0.08em;color:var(--white);">Experiences</span>
       <a href="adventure.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(201,168,76,0.6);padding-left:1rem;">⛰️ &nbsp;Adventure</a>
@@ -157,7 +182,7 @@
       <a href="international.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(201,168,76,0.6);padding-left:1rem;">✈️ &nbsp;International</a>
     </div>
     <a href="contact.html" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;letter-spacing:0.08em;color:var(--white);">Contact</a>
-    <a href="contact.html" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;letter-spacing:0.08em;color:var(--gold);">Book Now</a>
+    <a href="book.html" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;letter-spacing:0.08em;color:var(--gold);">Book Now</a>
     <button onclick="toggleMenu()" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;">✕</button>
   </div>
 
@@ -172,7 +197,7 @@
         the average traveler. We go beyond sightseeing into genuine understanding.
       </p>
       <div class="hero-actions">
-        <a href="contact.html" class="btn-primary">Plan My Journey</a>
+        <a href="book.html" class="btn-primary">Plan My Journey</a>
         <a href="#offerings" class="btn-ghost">Explore Experiences</a>
       </div>
     </div>
@@ -294,7 +319,7 @@
   <section id="cta-section">
     <h2 class="cta-title">Travel That<br>Changes You.</h2>
     <p class="cta-sub">Tell us what you want to understand — about a place, a people, a tradition. We'll build the experience around your curiosity.</p>
-    <a href="contact.html" class="btn-dark">Plan My Journey</a>
+    <a href="book.html" class="btn-dark">Plan My Journey</a>
   </section>
 
   <footer>
@@ -308,7 +333,8 @@
         <ul class="footer-links">
           <li><a href="index.html#destinations">Destinations</a></li>
           <li><a href="index.html#pillars">What We Do</a></li>
-          <li><a href="contact.html">Book a Trip</a></li>
+          <li><a href="index.html#experience">Our Approach</a></li>
+          <li><a href="book.html">Book a Trip</a></li>
         </ul>
       </div>
       <div>
@@ -324,13 +350,13 @@
         <h4 class="footer-col-title">Plan Your Trip</h4>
         <ul class="footer-links">
           <li><a href="contact.html">Send an Inquiry</a></li>
+          <li><a href="book.html">Book a Journey</a></li>
           <li><a href="index.html#destinations">Browse Destinations</a></li>
-          <li><a href="index.html#pillars">What We Do</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">© 2026 Ronin Adventures. All rights reserved. &nbsp;|&nbsp; Website by <a href="https://ronon.digital" target="_blank" style="color:var(--gold);text-decoration:none;">Ronin Digital</a></p>
+      <p class="footer-copy">© 2026 Ronin Adventures. All rights reserved. &nbsp;|&nbsp; Website by <a href="https://ronin.digital" target="_blank" style="color:var(--gold);text-decoration:none;">Ronin Digital</a></p>
       <div class="footer-social">
         <a href="#" class="social-link">📸</a><a href="#" class="social-link">🌐</a><a href="#" class="social-link">💼</a>
       </div>

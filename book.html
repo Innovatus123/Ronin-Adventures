@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — Ronin Adventures</title>
-  <meta name="description" content="Start planning your bespoke journey with Ronin Adventures. No obligation, 24-hour response, 100% custom itineraries across 60+ countries." />
+  <title>Book Your Journey — Ronin Adventures</title>
+  <meta name="description" content="Ready to go? Reserve your bespoke Ronin Adventures journey. Select your destination, dates, and preferences — we'll handle everything from there." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://roninadventures.com/contact.html" />
-  <meta property="og:title" content="Contact — Ronin Adventures" />
-  <meta property="og:description" content="Start planning your bespoke journey. No obligation, 24-hour response, 100% custom. Tell us where you want to go — we'll build the trip." />
+  <meta property="og:url" content="https://roninadventures.com/book.html" />
+  <meta property="og:title" content="Book Your Journey — Ronin Adventures" />
+  <meta property="og:description" content="Ready to go? Reserve your bespoke journey. Select your destination, dates, and preferences — we'll handle everything from there." />
   <meta property="og:image" content="https://roninadventures.com/og-home.jpg" />
   <meta property="og:site_name" content="Ronin Adventures" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Contact — Ronin Adventures" />
-  <meta name="twitter:description" content="Start planning your bespoke journey. No obligation, 24-hour response, 100% custom." />
+  <meta name="twitter:title" content="Book Your Journey — Ronin Adventures" />
+  <meta name="twitter:description" content="Ready to go? Reserve your bespoke journey with Ronin Adventures." />
   <meta name="twitter:image" content="https://roninadventures.com/og-home.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,13 +49,23 @@
     .nav-cta:hover { background: var(--gold-lt) !important; }
     .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
     .nav-burger span { display: block; width: 26px; height: 2px; background: var(--white); }
+    nav.scrolled { background: rgba(10,10,10,0.96); padding: 0.85rem 4rem; border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); }
 
     /* PAGE HEADER */
     .page-header {
       padding: 10rem 4rem 5rem;
-      background: linear-gradient(to bottom, var(--dark), var(--black));
+      background: linear-gradient(160deg, #0d0d0d 0%, #111 40%, rgba(201,168,76,0.04) 100%);
       border-bottom: 1px solid var(--border);
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 65%);
+      pointer-events: none;
     }
     .page-eyebrow {
       font-size: 0.72rem;
@@ -94,17 +104,17 @@
       line-height: 1.8;
     }
 
-    /* TRUST STRIP */
-    .trust-strip {
-      background: rgba(201,168,76,0.06);
-      border-bottom: 1px solid var(--border);
+    /* COMMITMENT STRIP */
+    .commitment-strip {
+      background: linear-gradient(90deg, rgba(201,168,76,0.06), rgba(201,168,76,0.1), rgba(201,168,76,0.06));
+      border-bottom: 1px solid rgba(201,168,76,0.15);
       padding: 1.75rem 4rem;
       display: flex;
       justify-content: center;
       gap: 4rem;
       flex-wrap: wrap;
     }
-    .trust-item {
+    .commit-item {
       display: flex;
       align-items: center;
       gap: 0.75rem;
@@ -112,20 +122,20 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(244,244,244,0.65);
+      color: rgba(201,168,76,0.85);
     }
-    .trust-item span { font-size: 1.1rem; }
+    .commit-item span { font-size: 1.1rem; }
 
-    /* MAIN CONTENT */
-    .contact-main {
+    /* MAIN LAYOUT */
+    .book-main {
       display: grid;
-      grid-template-columns: 1fr 1.4fr;
+      grid-template-columns: 1fr 1.5fr;
       gap: 0;
       min-height: 80vh;
     }
 
     /* LEFT PANEL */
-    .contact-panel-left {
+    .book-panel-left {
       background: var(--dark);
       border-right: 1px solid var(--border);
       padding: 5rem 4rem;
@@ -135,42 +145,159 @@
     .panel-title { font-family: var(--ff-head); font-size: clamp(2rem, 3.5vw, 3rem); line-height: 0.95; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 1.5rem; }
     .panel-body { font-size: 0.88rem; color: rgba(244,244,244,0.6); line-height: 1.85; margin-bottom: 3rem; max-width: 380px; }
 
-    .info-blocks { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 3.5rem; }
-    .info-block { display: flex; align-items: flex-start; gap: 1.25rem; }
-    .info-icon { width: 46px; height: 46px; background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 2px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem; }
-    .info-text strong { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
-    .info-text p { font-size: 0.88rem; color: rgba(244,244,244,0.65); line-height: 1.6; }
+    /* PROCESS STEPS */
+    .process-steps { display: flex; flex-direction: column; gap: 0; margin-bottom: 3.5rem; }
+    .process-step { display: flex; align-items: flex-start; gap: 1.25rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); position: relative; }
+    .process-step:last-child { border-bottom: none; }
+    .step-num {
+      width: 36px; height: 36px;
+      background: var(--gold);
+      color: var(--black);
+      font-family: var(--ff-head);
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      border-radius: 2px;
+    }
+    .step-text strong { display: block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); margin-bottom: 0.3rem; }
+    .step-text p { font-size: 0.82rem; color: rgba(244,244,244,0.55); line-height: 1.6; }
 
-    .experience-links { display: flex; flex-direction: column; gap: 0.75rem; }
-    .exp-link { display: flex; align-items: center; gap: 0.85rem; padding: 1rem 1.25rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 2px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,244,244,0.65); transition: color 0.25s, border-color 0.25s, background 0.25s; }
-    .exp-link:hover { color: var(--gold); border-color: rgba(201,168,76,0.3); background: rgba(201,168,76,0.05); }
-    .exp-link-icon { font-size: 1rem; }
-    .exp-link-arrow { margin-left: auto; font-size: 0.7rem; opacity: 0.5; }
+    /* DESTINATION PREVIEWS */
+    .dest-previews { display: flex; flex-direction: column; gap: 0.6rem; }
+    .dest-preview-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(244,244,244,0.65);
+      transition: color 0.25s, border-color 0.25s, background 0.25s;
+    }
+    .dest-preview-link:hover { color: var(--gold); border-color: rgba(201,168,76,0.3); background: rgba(201,168,76,0.05); }
+    .dest-preview-icon { font-size: 1rem; }
+    .dest-preview-meta { margin-left: auto; font-size: 0.65rem; letter-spacing: 0.12em; color: var(--muted); font-weight: 400; }
 
-    /* RIGHT PANEL — FORM */
-    .contact-panel-right {
+    /* RIGHT PANEL — BOOKING FORM */
+    .book-panel-right {
       background: var(--black);
-      padding: 5rem 4rem 5rem 4.5rem;
+      padding: 5rem 4.5rem 5rem 4rem;
+    }
+
+    .form-section-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .form-section-label::before {
+      content: '';
+      display: inline-block;
+      width: 22px;
+      height: 2px;
+      background: var(--gold);
     }
     .form-section-title {
       font-family: var(--ff-head);
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       letter-spacing: 0.06em;
       color: var(--white);
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
+
+    /* DIVIDER BETWEEN FORM SECTIONS */
+    .form-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0 1.75rem;
+    }
+    .form-block-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .form-block-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+    .form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
     .form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
+    .form-group.no-mb { margin-bottom: 0; }
     label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+    label .req { color: var(--gold); margin-left: 2px; }
     input, select, textarea { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 2px; color: var(--white); font-family: var(--ff-body); font-size: 0.88rem; padding: 0.85rem 1rem; width: 100%; transition: border-color 0.25s, background 0.25s; outline: none; -webkit-appearance: none; }
     input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.25); }
     input:focus, select:focus, textarea:focus { border-color: var(--gold); background: rgba(201,168,76,0.05); }
+    input[type="date"] { color-scheme: dark; }
+    input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.6) sepia(1) hue-rotate(5deg) saturate(3); cursor: pointer; }
     select option { background: var(--dark); }
-    textarea { resize: vertical; min-height: 130px; }
-    .form-submit { margin-top: 2rem; }
-    .btn-submit { width: 100%; background: var(--gold); color: var(--black); font-family: var(--ff-body); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; padding: 1.15rem; border: none; border-radius: 2px; cursor: pointer; transition: background 0.25s, transform 0.2s; }
+    textarea { resize: vertical; min-height: 110px; }
+
+    /* ACCOMMODATION TOGGLE */
+    .toggle-group { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.25rem; }
+    .toggle-option { display: none; }
+    .toggle-label {
+      padding: 0.55rem 1.1rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(244,244,244,0.5);
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .toggle-option:checked + .toggle-label {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(201,168,76,0.08);
+    }
+    .toggle-label:hover { border-color: rgba(201,168,76,0.4); color: rgba(201,168,76,0.8); }
+
+    /* SUBMIT */
+    .form-submit { margin-top: 2.25rem; }
+    .btn-submit {
+      width: 100%;
+      background: var(--gold);
+      color: var(--black);
+      font-family: var(--ff-body);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 1.25rem;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+      position: relative;
+    }
     .btn-submit:hover { background: var(--gold-lt); transform: translateY(-2px); }
-    .form-note { text-align: center; font-size: 0.72rem; color: var(--muted); margin-top: 1rem; }
+    .form-note { text-align: center; font-size: 0.7rem; color: var(--muted); margin-top: 0.85rem; line-height: 1.6; }
+    .form-note a { color: rgba(201,168,76,0.7); text-decoration: underline; }
 
 /* FOOTER */
     /* FOOTER */
@@ -196,9 +323,9 @@
 
     /* RESPONSIVE */
     @media (max-width: 960px) {
-      .contact-main { grid-template-columns: 1fr; }
-      .contact-panel-left { border-right: none; border-bottom: 1px solid var(--border); padding: 4rem 2rem; }
-      .contact-panel-right { padding: 4rem 2rem; }
+      .book-main { grid-template-columns: 1fr; }
+      .book-panel-left { border-right: none; border-bottom: 1px solid var(--border); padding: 4rem 2rem; }
+      .book-panel-right { padding: 4rem 2rem; }
     }
     @media (max-width: 768px) {
       nav { padding: 1.25rem 1.5rem; }
@@ -206,8 +333,8 @@
       .nav-links { display: none; }
       .nav-burger { display: flex; }
       .page-header { padding: 8rem 1.5rem 3.5rem; }
-      .trust-strip { padding: 1.5rem 1.5rem; gap: 1.5rem; }
-      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .commitment-strip { padding: 1.5rem 1.5rem; gap: 1.5rem; }
+      .form-row, .form-row-3 { grid-template-columns: 1fr; gap: 0; }
       footer { padding: 2.5rem 1.5rem 1.5rem; }
       .footer-bottom { flex-direction: column; text-align: center; }
     }
@@ -238,8 +365,8 @@
           <a href="international.html"><span class="dd-icon">✈️</span>International</a>
         </div>
       </li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-      <li><a href="book.html" class="nav-cta">Book Now</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="book.html" class="nav-cta active">Book Now</a></li>
     </ul>
     <div class="nav-burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </nav>
@@ -268,154 +395,208 @@
 
   <!-- PAGE HEADER -->
   <div class="page-header">
-    <p class="page-eyebrow">Plan Your Journey</p>
-    <h1 class="page-title">Let's Build<br>Something <span>Extraordinary.</span></h1>
-    <p class="page-sub">Tell us what you're dreaming — we'll design the rest. Every trip starts with a single inquiry. No commitments, no pressure.</p>
+    <p class="page-eyebrow">Reserve Your Journey</p>
+    <h1 class="page-title">You're Ready.<br>Let's Make It <span>Real.</span></h1>
+    <p class="page-sub">Tell us where you want to go and when. We'll confirm availability, build your itinerary, and have everything in place before you step on the plane.</p>
   </div>
 
-  <!-- TRUST STRIP -->
-  <div class="trust-strip">
-    <div class="trust-item"><span>🕐</span> Response within 24 hours</div>
-    <div class="trust-item"><span>🌍</span> 60+ countries covered</div>
-    <div class="trust-item"><span>🔒</span> No obligation to book</div>
-    <div class="trust-item"><span>✦</span> 100% custom itineraries</div>
+  <!-- COMMITMENT STRIP -->
+  <div class="commitment-strip">
+    <div class="commit-item"><span>✦</span> Dates held within 48 hours</div>
+    <div class="commit-item"><span>🗓️</span> Departure confirmed in 3 days</div>
+    <div class="commit-item"><span>🔐</span> 20% deposit secures your booking</div>
+    <div class="commit-item"><span>🌍</span> Full itinerary delivered in 7 days</div>
   </div>
 
-  <!-- MAIN CONTACT AREA -->
-  <div class="contact-main">
+  <!-- MAIN AREA -->
+  <div class="book-main">
 
     <!-- LEFT PANEL -->
-    <div class="contact-panel-left">
-      <p class="section-tag">Why Reach Out</p>
-      <h2 class="panel-title">We Plan.<br>You Travel.</h2>
+    <div class="book-panel-left">
+      <p class="section-tag">What Happens Next</p>
+      <h2 class="panel-title">Four Steps<br>to Departure.</h2>
       <p class="panel-body">
-        Whether you know exactly where you want to go or you're starting with
-        nothing but a feeling, our advisors will turn it into a fully realized
-        itinerary — designed around you, not a template.
+        Once you submit your booking request, our team takes it from there.
+        You'll never deal with logistics — only decisions about what you want your trip to feel like.
       </p>
 
-      <div class="info-blocks">
-        <div class="info-block">
-          <div class="info-icon">🕐</div>
-          <div class="info-text">
-            <strong>Response Time</strong>
-            <p>Within 24 hours, Monday through Saturday. We'll follow up with questions to start building your trip.</p>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <div class="step-text">
+            <strong>Confirmation Call</strong>
+            <p>Within 24 hours we schedule a 20-minute call to lock in details — dates, preferences, any special requirements.</p>
           </div>
         </div>
-        <div class="info-block">
-          <div class="info-icon">📋</div>
-          <div class="info-text">
-            <strong>What Happens Next</strong>
-            <p>After your inquiry, we schedule a discovery call to understand your vision, budget, and travel style before building your itinerary.</p>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <div class="step-text">
+            <strong>Deposit & Date Hold</strong>
+            <p>A 20% deposit secures your dates and activates your dedicated travel advisor. No deposits means no date hold.</p>
           </div>
         </div>
-        <div class="info-block">
-          <div class="info-icon">🔒</div>
-          <div class="info-text">
-            <strong>No Commitment Required</strong>
-            <p>Your inquiry is exploratory. No deposits, no contracts, no pressure — until you're ready to go.</p>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <div class="step-text">
+            <strong>Custom Itinerary Delivery</strong>
+            <p>Full day-by-day itinerary delivered within 7 days. Accommodations, guides, transfers, and experiences all arranged.</p>
           </div>
         </div>
-        <div class="info-block">
-          <div class="info-icon">✈️</div>
-          <div class="info-text">
-            <strong>Any Destination</strong>
-            <p>60+ countries across all continents. If you're unsure where to go, tell us what kind of experience you want — we'll suggest options.</p>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <div class="step-text">
+            <strong>Pre-Departure Briefing</strong>
+            <p>One week out, we walk through everything — packing, logistics, local contacts, emergency protocols. Then you go.</p>
           </div>
         </div>
       </div>
 
-      <p class="section-tag">Browse by Type</p>
-      <div class="experience-links">
-        <a href="adventure.html" class="exp-link"><span class="exp-link-icon">⛰️</span> Adventure Travel <span class="exp-link-arrow">→</span></a>
-        <a href="luxury.html" class="exp-link"><span class="exp-link-icon">🏛️</span> Luxury Escapes <span class="exp-link-arrow">→</span></a>
-        <a href="cultural.html" class="exp-link"><span class="exp-link-icon">🌏</span> Cultural Journeys <span class="exp-link-arrow">→</span></a>
-        <a href="international.html" class="exp-link"><span class="exp-link-icon">✈️</span> International Travel <span class="exp-link-arrow">→</span></a>
+      <p class="section-tag">Featured Destinations</p>
+      <div class="dest-previews">
+        <a href="serengeti.html" class="dest-preview-link"><span class="dest-preview-icon">🦁</span> Serengeti, Tanzania <span class="dest-preview-meta">Adventure · Luxury</span></a>
+        <a href="amalfi.html" class="dest-preview-link"><span class="dest-preview-icon">🌊</span> Amalfi Coast, Italy <span class="dest-preview-meta">Luxury · Cultural</span></a>
+        <a href="patagonia.html" class="dest-preview-link"><span class="dest-preview-icon">🏔️</span> Patagonia, Chile <span class="dest-preview-meta">Adventure</span></a>
+        <a href="kyoto.html" class="dest-preview-link"><span class="dest-preview-icon">⛩️</span> Kyoto, Japan <span class="dest-preview-meta">Cultural · Luxury</span></a>
+        <a href="sahara.html" class="dest-preview-link"><span class="dest-preview-icon">🌅</span> Sahara, Morocco <span class="dest-preview-meta">Adventure · Cultural</span></a>
       </div>
     </div>
 
-    <!-- RIGHT PANEL — FORM -->
-    <div class="contact-panel-right">
-      <h2 class="form-section-title">Send Your Inquiry</h2>
-      <form id="inquiry-form" onsubmit="handleSubmit(event)">
+    <!-- RIGHT PANEL — BOOKING FORM -->
+    <div class="book-panel-right">
+      <p class="form-section-label">Booking Request</p>
+      <h2 class="form-section-title">Build My Journey</h2>
+
+      <form id="booking-form" onsubmit="handleSubmit(event)">
         <!-- Web3Forms -->
         <input type="hidden" name="access_key" value="d96eda7b-4974-4e19-947b-8e3987bcaf2f" />
-        <input type="hidden" name="subject" value="New Inquiry — Ronin Adventures" />
-        <input type="hidden" name="from_name" value="Ronin Adventures Website" />
+        <input type="hidden" name="subject" value="New Booking Request — Ronin Adventures" />
+        <input type="hidden" name="from_name" value="Ronin Adventures Booking" />
         <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
 
+        <!-- SECTION 1: WHO -->
+        <div class="form-block-title">Traveler Details</div>
         <div class="form-row">
-          <div class="form-group">
-            <label for="first-name">First Name</label>
+          <div class="form-group no-mb">
+            <label for="first-name">First Name <span class="req">*</span></label>
             <input type="text" id="first-name" name="first_name" placeholder="Your first name" required />
           </div>
-          <div class="form-group">
-            <label for="last-name">Last Name</label>
+          <div class="form-group no-mb">
+            <label for="last-name">Last Name <span class="req">*</span></label>
             <input type="text" id="last-name" name="last_name" placeholder="Your last name" required />
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="email">Email Address</label>
+        <div class="form-row" style="margin-top:1.25rem;">
+          <div class="form-group no-mb">
+            <label for="email">Email Address <span class="req">*</span></label>
             <input type="email" id="email" name="email" placeholder="your@email.com" required />
           </div>
-          <div class="form-group">
-            <label for="phone">Phone (optional)</label>
-            <input type="tel" id="phone" name="phone" placeholder="+1 (---) --- ----" />
+          <div class="form-group no-mb">
+            <label for="phone">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (---) --- ----" required />
           </div>
         </div>
+
+        <hr class="form-divider" />
+
+        <!-- SECTION 2: WHERE + WHEN -->
+        <div class="form-block-title">Destination & Dates</div>
         <div class="form-group">
-          <label for="travel-type">Type of Experience</label>
-          <select id="travel-type" name="travel_type" required>
-            <option value="" disabled selected>Select a travel style</option>
-            <option value="Adventure / Outdoor">Adventure / Outdoor</option>
-            <option value="Luxury & Bespoke">Luxury &amp; Bespoke</option>
-            <option value="Cultural & Immersive">Cultural &amp; Immersive</option>
-            <option value="International">International</option>
-            <option value="Combination of Styles">Combination of Styles</option>
-            <option value="Not Sure Yet">Not Sure Yet — Help Me Decide</option>
+          <label for="destination">Primary Destination <span class="req">*</span></label>
+          <select id="destination" name="destination" required>
+            <option value="" disabled selected>Select a destination</option>
+            <optgroup label="Featured Destinations">
+              <option value="Serengeti, Tanzania">🦁 Serengeti, Tanzania</option>
+              <option value="Amalfi Coast, Italy">🌊 Amalfi Coast, Italy</option>
+              <option value="Patagonia, Chile">🏔️ Patagonia, Chile</option>
+              <option value="Kyoto, Japan">⛩️ Kyoto, Japan</option>
+              <option value="Sahara, Morocco">🌅 Sahara, Morocco</option>
+            </optgroup>
+            <optgroup label="Other">
+              <option value="Other — I'll describe below">Other — I'll describe below</option>
+              <option value="Open — Help Me Choose">Open — Help Me Choose</option>
+            </optgroup>
           </select>
         </div>
         <div class="form-row">
-          <div class="form-group">
-            <label for="destination">Destination(s) in Mind</label>
-            <input type="text" id="destination" name="destination" placeholder="e.g. East Africa, Japan, Open…" />
+          <div class="form-group no-mb">
+            <label for="depart-date">Departure Date <span class="req">*</span></label>
+            <input type="date" id="depart-date" name="departure_date" required />
           </div>
-          <div class="form-group">
-            <label for="travelers">Number of Travelers</label>
-            <select id="travelers" name="travelers">
-              <option value="Solo (1)">Solo (1)</option>
-              <option value="Couple (2)" selected>Couple (2)</option>
-              <option value="Small Group (3-5)">Small Group (3–5)</option>
-              <option value="Large Group (6+)">Large Group (6+)</option>
-            </select>
+          <div class="form-group no-mb">
+            <label for="return-date">Return Date <span class="req">*</span></label>
+            <input type="date" id="return-date" name="return_date" required />
           </div>
         </div>
+
+        <hr class="form-divider" />
+
+        <!-- SECTION 3: PARTY + BUDGET -->
+        <div class="form-block-title">Group & Budget</div>
         <div class="form-row">
-          <div class="form-group">
-            <label for="travel-dates">Approximate Travel Dates</label>
-            <input type="text" id="travel-dates" name="travel_dates" placeholder="e.g. March 2027, flexible…" />
+          <div class="form-group no-mb">
+            <label for="travelers">Number of Travelers <span class="req">*</span></label>
+            <select id="travelers" name="travelers" required>
+              <option value="" disabled selected>Select</option>
+              <option value="Solo (1)">Solo (1)</option>
+              <option value="Couple (2)">Couple (2)</option>
+              <option value="Small Group (3-5)">Small Group (3–5)</option>
+              <option value="Large Group (6+)">Large Group (6+)</option>
+              <option value="Private Corporate Group">Private Corporate Group</option>
+            </select>
           </div>
-          <div class="form-group">
-            <label for="budget">Budget Range (per person)</label>
-            <select id="budget" name="budget">
+          <div class="form-group no-mb">
+            <label for="budget">Budget Per Person <span class="req">*</span></label>
+            <select id="budget" name="budget" required>
               <option value="" disabled selected>Select a range</option>
-              <option value="Under $5,000">Under $5,000</option>
               <option value="$5,000 - $10,000">$5,000 – $10,000</option>
               <option value="$10,000 - $20,000">$10,000 – $20,000</option>
               <option value="$20,000 - $50,000">$20,000 – $50,000</option>
               <option value="$50,000+">$50,000+</option>
-              <option value="Prefer not to say">Prefer not to say</option>
+              <option value="Flexible — Prioritize the experience">Flexible — Prioritize the experience</option>
             </select>
           </div>
         </div>
+
+        <hr class="form-divider" />
+
+        <!-- SECTION 4: PREFERENCES -->
+        <div class="form-block-title">Experience Preferences</div>
         <div class="form-group">
-          <label for="message">Tell Us More</label>
-          <textarea id="message" name="message" placeholder="What does your ideal trip look like? Dream destinations, must-haves, activities, accommodation preferences — anything helps us start building."></textarea>
+          <label for="exp-type">Experience Style <span class="req">*</span></label>
+          <select id="exp-type" name="experience_type" required>
+            <option value="" disabled selected>Select a style</option>
+            <option value="Adventure / Outdoor">Adventure / Outdoor</option>
+            <option value="Luxury & Bespoke">Luxury &amp; Bespoke</option>
+            <option value="Cultural & Immersive">Cultural &amp; Immersive</option>
+            <option value="International Exploration">International Exploration</option>
+            <option value="Combination — Describe below">Combination — I'll describe below</option>
+          </select>
         </div>
+        <div class="form-group">
+          <label>Accommodation Preference</label>
+          <div class="toggle-group">
+            <input type="radio" name="accommodation" id="acc-luxury" value="Luxury Lodges / 5-Star Hotels" class="toggle-option" />
+            <label for="acc-luxury" class="toggle-label">Luxury</label>
+            <input type="radio" name="accommodation" id="acc-boutique" value="Boutique / Design Hotels" class="toggle-option" />
+            <label for="acc-boutique" class="toggle-label">Boutique</label>
+            <input type="radio" name="accommodation" id="acc-camp" value="Tented Camps / Glamping" class="toggle-option" />
+            <label for="acc-camp" class="toggle-label">Tented / Glamping</label>
+            <input type="radio" name="accommodation" id="acc-mix" value="Mix — Best Option for Location" class="toggle-option" checked />
+            <label for="acc-mix" class="toggle-label">Best Available</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="special-req">Special Requirements</label>
+          <textarea id="special-req" name="special_requirements" placeholder="Dietary restrictions, accessibility needs, celebration occasions, must-have experiences, anything else we should know before designing your trip…"></textarea>
+        </div>
+
+        <!-- SUBMIT -->
         <div class="form-submit">
-          <button type="submit" class="btn-submit">Send My Inquiry</button>
-          <p class="form-note" id="form-status">No commitments. We'll reach out to discuss possibilities within 24 hours.</p>
+          <button type="submit" class="btn-submit">Reserve My Journey →</button>
+          <p class="form-note" id="form-status">
+            Submitting this form starts your booking. Our team will confirm within 24 hours.<br>
+            Not ready to commit? <a href="contact.html">Send a general inquiry instead.</a>
+          </p>
         </div>
       </form>
     </div>
@@ -467,6 +648,17 @@
   </footer>
 
   <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; observer.unobserve(e.target); }});
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.process-step, .dest-preview-link').forEach(el => {
+      el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
+
     function toggleMenu() {
       const mn = document.getElementById('mobile-nav');
       mn.style.display = mn.style.display === 'flex' ? 'none' : 'flex';
@@ -479,7 +671,7 @@
       const statusEl = document.getElementById('form-status');
       const originalText = btn.textContent;
 
-      btn.textContent = 'Sending…';
+      btn.textContent = 'Submitting…';
       btn.disabled = true;
       btn.style.opacity = '0.75';
 
@@ -491,11 +683,11 @@
         const result = await response.json();
 
         if (result.success) {
-          btn.textContent = 'Inquiry Sent ✓';
+          btn.textContent = 'Booking Request Received ✓';
           btn.style.background = '#2a6b3c';
           btn.style.color = '#fff';
           btn.style.opacity = '1';
-          statusEl.textContent = 'Thank you! We\'ll be in touch within 24 hours.';
+          statusEl.innerHTML = "You're in. We'll confirm your dates and reach out within 24 hours to begin.";
           statusEl.style.color = '#6bcf8a';
           form.reset();
           setTimeout(() => {
@@ -503,14 +695,14 @@
             btn.style.background = '';
             btn.style.color = '';
             btn.disabled = false;
-            statusEl.textContent = 'No commitments. We\'ll reach out to discuss possibilities within 24 hours.';
+            statusEl.innerHTML = 'Submitting this form starts your booking. Our team will confirm within 24 hours.<br>Not ready to commit? <a href="contact.html" style="color:rgba(201,168,76,0.7);text-decoration:underline;">Send a general inquiry instead.</a>';
             statusEl.style.color = '';
-          }, 6000);
+          }, 7000);
         } else {
           throw new Error(result.message || 'Submission failed');
         }
       } catch (err) {
-        btn.textContent = 'Something went wrong';
+        btn.textContent = 'Something Went Wrong';
         btn.style.background = '#8b1a1a';
         btn.style.color = '#fff';
         btn.style.opacity = '1';
@@ -522,17 +714,29 @@
           btn.style.color = '';
           btn.style.opacity = '';
           btn.disabled = false;
-          statusEl.textContent = 'No commitments. We\'ll reach out to discuss possibilities within 24 hours.';
+          statusEl.innerHTML = 'Submitting this form starts your booking. Our team will confirm within 24 hours.<br>Not ready to commit? <a href="contact.html" style="color:rgba(201,168,76,0.7);text-decoration:underline;">Send a general inquiry instead.</a>';
           statusEl.style.color = '';
         }, 5000);
       }
     }
 
-    // Pre-select travel type from URL param (e.g. contact.html?type=adventure)
+    // Pre-select destination from URL param (e.g. book.html?dest=serengeti)
     const params = new URLSearchParams(window.location.search);
+    const destParam = params.get('dest');
+    if (destParam) {
+      const sel = document.getElementById('destination');
+      for (let opt of sel.options) {
+        if (opt.value.toLowerCase().includes(destParam.toLowerCase())) {
+          opt.selected = true;
+          break;
+        }
+      }
+    }
+
+    // Pre-select experience type from URL param (e.g. book.html?type=adventure)
     const typeParam = params.get('type');
     if (typeParam) {
-      const sel = document.getElementById('travel-type');
+      const sel = document.getElementById('exp-type');
       for (let opt of sel.options) {
         if (opt.value.toLowerCase().includes(typeParam.toLowerCase())) {
           opt.selected = true;
@@ -540,6 +744,16 @@
         }
       }
     }
+
+    // Set minimum date for departure/return to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('depart-date').setAttribute('min', today);
+    document.getElementById('return-date').setAttribute('min', today);
+
+    // Ensure return date is always after departure date
+    document.getElementById('depart-date').addEventListener('change', function() {
+      document.getElementById('return-date').setAttribute('min', this.value);
+    });
   </script>
 </body>
 </html>

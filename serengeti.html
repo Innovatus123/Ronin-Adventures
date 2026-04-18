@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serengeti, Tanzania — Ronin Adventures</title>
+  <meta name="description" content="Witness the Great Migration from private bush camps in the Serengeti. Ronin Adventures delivers elite wildlife experiences with expert naturalist guides in Tanzania's most iconic wilderness." />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://roninadventures.com/serengeti.html" />
+  <meta property="og:title" content="Serengeti, Tanzania — Ronin Adventures" />
+  <meta property="og:description" content="Witness the Great Migration from private bush camps. Elite naturalist guides. Zero crowds. The Serengeti as it was meant to be experienced." />
+  <meta property="og:image" content="https://roninadventures.com/og-serengeti.jpg" />
+  <meta property="og:site_name" content="Ronin Adventures" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Serengeti, Tanzania — Ronin Adventures" />
+  <meta name="twitter:description" content="Witness the Great Migration from private bush camps. Elite naturalist guides. Zero crowds." />
+  <meta name="twitter:image" content="https://roninadventures.com/og-serengeti.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a; --dark: #111111; --card: #181818;
+      --gold: #c9a84c; --gold-lt: #e8c76a; --white: #f4f4f4;
+      --muted: #888888; --border: rgba(255,255,255,0.08);
+      --ff-head: 'Bebas Neue', sans-serif; --ff-body: 'Montserrat', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: var(--ff-body); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(10,10,10,0.96); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); transition: padding 0.4s ease; }
+    nav.scrolled { padding: 0.85rem 4rem; }
+    .nav-logo { font-family: var(--ff-head); font-size: 1.6rem; letter-spacing: 0.12em; color: var(--gold); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); transition: color 0.25s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 0.35rem; }
+    .nav-dropdown > a::after { content: '▾'; font-size: 0.6rem; transition: transform 0.25s; }
+    .nav-dropdown:hover > a::after { transform: rotate(180deg); }
+    .dropdown-menu { position: absolute; top: calc(100% + 1.1rem); left: 50%; transform: translateX(-50%) translateY(6px); min-width: 200px; background: rgba(16,16,16,0.97); border: 1px solid var(--border); border-top: 2px solid var(--gold); backdrop-filter: blur(16px); border-radius: 0 0 2px 2px; padding: 0.5rem 0; opacity: 0; visibility: hidden; transition: opacity 0.22s ease, visibility 0.22s ease, transform 0.22s ease; z-index: 200; }
+    .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .dropdown-menu a { display: flex; align-items: center; gap: 0.75rem; padding: 0.7rem 1.25rem; font-size: 0.72rem; letter-spacing: 0.14em; color: rgba(244,244,244,0.75) !important; transition: color 0.2s, background 0.2s; white-space: nowrap; }
+    .dropdown-menu a:hover { color: var(--gold) !important; background: rgba(201,168,76,0.07); }
+    .dd-icon { font-size: 0.95rem; width: 18px; text-align: center; }
+    .nav-cta { background: var(--gold); color: var(--black) !important; padding: 0.55rem 1.4rem; border-radius: 2px; font-weight: 700; transition: background 0.25s !important; }
+    .nav-cta:hover { background: var(--gold-lt) !important; color: var(--black) !important; }
+    .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-burger span { display: block; width: 26px; height: 2px; background: var(--white); transition: all 0.3s; }
+
+    /* HERO */
+    .dest-hero { position: relative; height: 90vh; min-height: 600px; display: flex; align-items: flex-end; overflow: hidden; }
+    .dest-hero-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.85) 100%), url('https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=1800&q=80'); background-size: cover; background-position: center; }
+    .dest-hero-content { position: relative; z-index: 2; padding: 0 4rem 5rem; width: 100%; }
+    .dest-breadcrumb { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .dest-breadcrumb a { color: var(--gold); opacity: 0.7; }
+    .dest-breadcrumb a:hover { opacity: 1; }
+    .dest-hero-region { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(244,244,244,0.6); margin-bottom: 0.75rem; }
+    .dest-hero-title { font-family: var(--ff-head); font-size: clamp(4rem, 8vw, 7rem); line-height: 0.92; letter-spacing: 0.03em; text-transform: uppercase; color: var(--white); margin-bottom: 1.5rem; }
+    .dest-hero-title span { color: var(--gold); }
+    .dest-hero-tags { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .dest-hero-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; background: var(--gold); color: var(--black); padding: 0.35rem 0.9rem; border-radius: 1px; }
+    .dest-hero-icon { position: absolute; right: 8%; top: 50%; transform: translateY(-50%); font-size: 9rem; opacity: 0.12; pointer-events: none; }
+
+    /* SECTIONS */
+    section { padding: 6rem 4rem; }
+    .section-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+    .section-tag::before { content: ''; display: inline-block; width: 28px; height: 2px; background: var(--gold); }
+    .section-title { font-family: var(--ff-head); font-size: clamp(2.5rem, 4.5vw, 4rem); line-height: 0.95; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 1.5rem; }
+
+    /* OVERVIEW */
+    #overview { background: var(--dark); border-top: 1px solid var(--border); }
+    .overview-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: start; }
+    .overview-body { font-size: 0.95rem; font-weight: 300; color: rgba(244,244,244,0.72); line-height: 1.85; margin-bottom: 2rem; }
+    .overview-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .o-stat { background: var(--card); border: 1px solid var(--border); padding: 1.5rem; border-top: 2px solid var(--gold); }
+    .o-stat-num { font-family: var(--ff-head); font-size: 2.4rem; color: var(--gold); letter-spacing: 0.05em; }
+    .o-stat-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-top: 0.25rem; }
+    .info-blocks { display: flex; flex-direction: column; gap: 1.5rem; }
+    .info-block { background: var(--card); border: 1px solid var(--border); padding: 1.75rem; }
+    .info-block-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+    .info-block-value { font-size: 0.88rem; color: var(--white); font-weight: 600; margin-bottom: 0.35rem; }
+    .info-block-note { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+
+    /* HIGHLIGHTS */
+    #highlights { background: var(--black); }
+    .highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--border); margin-top: 3rem; }
+    .highlight-card { background: var(--card); padding: 2.25rem 2rem; position: relative; overflow: hidden; }
+    .highlight-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--gold); transition: width 0.4s; }
+    .highlight-card:hover::after { width: 100%; }
+    .h-icon { font-size: 2rem; margin-bottom: 1.25rem; display: block; }
+    .h-title { font-family: var(--ff-head); font-size: 1.3rem; letter-spacing: 0.06em; color: var(--white); margin-bottom: 0.65rem; }
+    .h-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
+
+    /* ITINERARY IDEAS */
+    #itinerary { background: var(--dark); border-top: 1px solid var(--border); }
+    .itinerary-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 1px; background: var(--border); }
+    .itin-item { background: var(--card); display: grid; grid-template-columns: 80px 1fr; gap: 2rem; align-items: start; padding: 2rem 2rem 2rem 0; }
+    .itin-day { font-family: var(--ff-head); font-size: 2.5rem; color: var(--gold); letter-spacing: 0.05em; text-align: center; padding-left: 2rem; }
+    .itin-title { font-family: var(--ff-head); font-size: 1.2rem; letter-spacing: 0.06em; color: var(--white); margin-bottom: 0.5rem; }
+    .itin-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
+
+    /* EXPERIENCE TYPES */
+    #experience-types { background: var(--black); }
+    .exp-type-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .exp-type-card { background: var(--card); border: 1px solid var(--border); padding: 2rem; display: flex; gap: 1.25rem; align-items: flex-start; transition: border-color 0.3s; }
+    .exp-type-card:hover { border-color: var(--gold); }
+    .exp-type-icon { font-size: 1.75rem; flex-shrink: 0; }
+    .exp-type-title { font-family: var(--ff-head); font-size: 1.1rem; letter-spacing: 0.06em; color: var(--white); margin-bottom: 0.4rem; }
+    .exp-type-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.65; }
+    .exp-type-link { display: inline-block; margin-top: 0.75rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+
+    /* CTA */
+    #dest-cta { background: var(--gold); padding: 6rem 4rem; text-align: center; }
+    .cta-title { font-family: var(--ff-head); font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 0.95; letter-spacing: 0.04em; text-transform: uppercase; color: var(--black); margin-bottom: 1.25rem; }
+    .cta-sub { font-size: 0.95rem; color: rgba(0,0,0,0.65); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.75; }
+    .btn-dark { background: var(--black); color: var(--gold); font-family: var(--ff-body); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 1rem 2.5rem; border: none; border-radius: 2px; cursor: pointer; transition: background 0.25s, transform 0.2s; display: inline-block; }
+    .btn-dark:hover { background: #1f1f1f; transform: translateY(-2px); }
+    /* FOOTER */
+    footer { background: var(--black); border-top: 1px solid var(--border); padding: 4rem 4rem 2.5rem; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 3.5rem; padding-bottom: 3.5rem; border-bottom: 1px solid var(--border); }
+    .footer-brand-logo { font-family: var(--ff-head); font-size: 2rem; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 1rem; }
+    .footer-brand-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.75; max-width: 280px; }
+    .footer-col-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--white); margin-bottom: 1.4rem; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .footer-links a { font-size: 0.82rem; color: var(--muted); transition: color 0.25s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 0.72rem; color: var(--muted); }
+    .footer-social { display: flex; gap: 1rem; }
+    .social-link { width: 36px; height: 36px; border: 1px solid var(--border); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: var(--muted); transition: border-color 0.25s, color 0.25s; }
+    .social-link:hover { border-color: var(--gold); color: var(--gold); }
+
+
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 1.25rem 1.5rem; }
+      nav.scrolled { padding: 0.85rem 1.5rem; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      .dest-hero-content { padding: 0 1.5rem 4rem; }
+      .dest-hero-icon { display: none; }
+      section { padding: 4rem 1.5rem; }
+      .overview-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .highlights-grid { grid-template-columns: 1fr; }
+      .itinerary-list { gap: 0; }
+      .exp-type-grid { grid-template-columns: 1fr; }
+      #dest-cta { padding: 4rem 1.5rem; }
+      footer { padding: 2.5rem 1.5rem 1.5rem; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">RONIN<span style="color:var(--white);opacity:0.4"> / </span>ADVENTURES</a>
+    <ul class="nav-links">
+      <li><a href="index.html#destinations" class="active">Destinations</a></li>
+      <li class="nav-dropdown">
+        <a href="index.html#pillars">What We Do</a>
+        <div class="dropdown-menu">
+          <a href="adventure.html"><span class="dd-icon">⛰️</span>Adventure Travel</a>
+          <a href="luxury.html"><span class="dd-icon">🏛️</span>Luxury Escapes</a>
+          <a href="cultural.html"><span class="dd-icon">🌏</span>Cultural Journeys</a>
+          <a href="international.html"><span class="dd-icon">✈️</span>International</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="#">Experiences</a>
+        <div class="dropdown-menu">
+          <a href="adventure.html"><span class="dd-icon">⛰️</span>Adventure Travel</a>
+          <a href="luxury.html"><span class="dd-icon">🏛️</span>Luxury Escapes</a>
+          <a href="cultural.html"><span class="dd-icon">🌏</span>Cultural Journeys</a>
+          <a href="international.html"><span class="dd-icon">✈️</span>International</a>
+        </div>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="book.html" class="nav-cta">Book Now</a></li>
+    </ul>
+    <div class="nav-burger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div id="mobile-nav" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(10,10,10,0.98);padding:6rem 2rem 2rem;flex-direction:column;gap:2rem;">
+    <a href="index.html#destinations" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;letter-spacing:0.08em;color:var(--white);">Destinations</a>
+    <div style="display:flex;flex-direction:column;gap:0.85rem;">
+      <a href="index.html#pillars" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;letter-spacing:0.08em;color:var(--white);">What We Do</a>
+      <a href="adventure.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">⛰️ &nbsp;Adventure</a>
+      <a href="luxury.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">🏛️ &nbsp;Luxury</a>
+      <a href="cultural.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">🌏 &nbsp;Cultural</a>
+      <a href="international.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">✈️ &nbsp;International</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0.85rem;">
+      <span style="font-family:var(--ff-head);font-size:2.5rem;letter-spacing:0.08em;color:var(--white);">Experiences</span>
+      <a href="adventure.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">⛰️ &nbsp;Adventure</a>
+      <a href="luxury.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">🏛️ &nbsp;Luxury</a>
+      <a href="cultural.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">🌏 &nbsp;Cultural</a>
+      <a href="international.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">✈️ &nbsp;International</a>
+    </div>
+    <a href="contact.html" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;letter-spacing:0.08em;color:var(--white);">Contact</a>
+    <a href="book.html" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;letter-spacing:0.08em;color:var(--gold);">Book Now</a>
+    <button onclick="toggleMenu()" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;">✕</button>
+  </div>
+
+  <!-- HERO -->
+  <div class="dest-hero">
+    <div class="dest-hero-bg"></div>
+    <div class="dest-hero-icon">🦁</div>
+    <div class="dest-hero-content">
+      <p class="dest-breadcrumb">
+        <a href="index.html">Home</a> <span>›</span>
+        <a href="index.html#destinations">Destinations</a> <span>›</span>
+        <span style="opacity:1;">Serengeti</span>
+      </p>
+      <p class="dest-hero-region">Eastern Africa · Tanzania</p>
+      <h1 class="dest-hero-title">Serengeti,<br><span>Tanzania</span></h1>
+      <div class="dest-hero-tags">
+        <span class="dest-hero-tag">Adventure</span>
+        <span class="dest-hero-tag">Luxury</span>
+        <span class="dest-hero-tag">Wildlife</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <div class="overview-grid">
+      <div>
+        <p class="section-tag">Destination Overview</p>
+        <h2 class="section-title">The Edge<br>of the Wild.</h2>
+        <p class="overview-body">
+          The Serengeti is not a destination — it is a force of nature. Stretching 12,000 square miles across northern Tanzania, it hosts the largest terrestrial mammal migration on Earth: over 1.5 million wildebeest, 200,000 zebra, and 500,000 gazelle moving in an unbroken cycle across the plains.
+        </p>
+        <p class="overview-body">
+          Ronin Adventures positions you at the center of it — not on a bus with forty strangers, but in private mobile camps that move with the migration, led by naturalists who have tracked these herds for decades. Every sunrise is deliberate. Every sighting, anticipated.
+        </p>
+        <div class="overview-stats">
+          <div class="o-stat">
+            <div class="o-stat-num">1.5M+</div>
+            <div class="o-stat-label">Wildebeest in migration</div>
+          </div>
+          <div class="o-stat">
+            <div class="o-stat-num">12,000</div>
+            <div class="o-stat-label">Square miles of ecosystem</div>
+          </div>
+          <div class="o-stat">
+            <div class="o-stat-num">500+</div>
+            <div class="o-stat-label">Bird species</div>
+          </div>
+          <div class="o-stat">
+            <div class="o-stat-num">Big 5</div>
+            <div class="o-stat-label">All present year-round</div>
+          </div>
+        </div>
+      </div>
+      <div class="info-blocks">
+        <div class="info-block">
+          <p class="info-block-label">Best Time to Visit</p>
+          <p class="info-block-value">July – October (Dry Season)</p>
+          <p class="info-block-note">Peak river crossings at the Mara River. December – March for calving season in the south — a spectacle rivaling the migration itself.</p>
+        </div>
+        <div class="info-block">
+          <p class="info-block-label">Duration</p>
+          <p class="info-block-value">7 – 14 days recommended</p>
+          <p class="info-block-note">Minimum 5 nights to meaningfully cover migration zones. We recommend combining with Ngorongoro Crater or the Zanzibar Coast.</p>
+        </div>
+        <div class="info-block">
+          <p class="info-block-label">Experience Level</p>
+          <p class="info-block-value">All levels — fully guided</p>
+          <p class="info-block-note">No prior safari experience needed. All activities are led by elite naturalist guides with 4x4 vehicles equipped for any terrain.</p>
+        </div>
+        <div class="info-block">
+          <p class="info-block-label">Entry Requirements</p>
+          <p class="info-block-value">Visa on arrival / e-Visa</p>
+          <p class="info-block-note">Yellow fever vaccination required if arriving from endemic countries. We handle all logistics and pre-travel documentation briefings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section id="highlights">
+    <p class="section-tag">What We Include</p>
+    <h2 class="section-title">Serengeti<br>Highlights</h2>
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <span class="h-icon">🌅</span>
+        <h3 class="h-title">Private Mobile Camps</h3>
+        <p class="h-desc">We position luxury tented camps directly in the path of the migration, moving as the herds move. No fixed lodges, no predictable views — just pure wilderness access.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="h-icon">🦁</span>
+        <h3 class="h-title">Big Five Tracking</h3>
+        <p class="h-desc">Lion prides, leopards, elephants, buffalo, and rhino. Our guides know the territory intimately — where the cats sleep at dawn, which kopjes the leopards favor.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="h-icon">🌊</span>
+        <h3 class="h-title">Mara River Crossings</h3>
+        <p class="h-desc">Witness thousands of wildebeest plunge into crocodile-filled waters in one of nature's most dramatic spectacles. We position you at precisely the right crossing point.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="h-icon">🎈</span>
+        <h3 class="h-title">Hot Air Balloon Safari</h3>
+        <p class="h-desc">Drift above the endless plains at sunrise, watching herds move below. Followed by a champagne bush breakfast — the most civilized way to see the Serengeti.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="h-icon">🍽️</span>
+        <h3 class="h-title">Bush Dining Experiences</h3>
+        <p class="h-desc">Candlelit dinners under stars, sundowner cocktails at the rim of a kopje, breakfast with a pride of lions in the distance. Every meal is an event.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="h-icon">🦒</span>
+        <h3 class="h-title">Ngorongoro Extension</h3>
+        <p class="h-desc">The world's largest intact volcanic caldera — 260 square kilometers of concentrated wildlife. Easily combined with the Serengeti for a complete northern Tanzania circuit.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAMPLE ITINERARY -->
+  <section id="itinerary">
+    <p class="section-tag">Sample Journey</p>
+    <h2 class="section-title">10 Days<br>in the Serengeti.</h2>
+    <div class="itinerary-list">
+      <div class="itin-item">
+        <div class="itin-day">01</div>
+        <div>
+          <h3 class="itin-title">Arrival in Arusha</h3>
+          <p class="itin-desc">Private transfer to a luxury lodge in Arusha. Pre-safari briefing with your personal guide, gear check, and welcome dinner with views of Mount Kilimanjaro.</p>
+        </div>
+      </div>
+      <div class="itin-item">
+        <div class="itin-day">02</div>
+        <div>
+          <h3 class="itin-title">Fly into the Serengeti</h3>
+          <p class="itin-desc">Charter flight to a private airstrip deep in the Southern Serengeti. Afternoon game drive immediately upon landing — lions are often spotted within the first hour.</p>
+        </div>
+      </div>
+      <div class="itin-item">
+        <div class="itin-day">03–05</div>
+        <div>
+          <h3 class="itin-title">Migration Tracking</h3>
+          <p class="itin-desc">Full-day game drives following the herd movements. Pre-dawn departures, midday breaks at camp, golden-hour afternoon drives. Night game drives where permitted.</p>
+        </div>
+      </div>
+      <div class="itin-item">
+        <div class="itin-day">06</div>
+        <div>
+          <h3 class="itin-title">Sunrise Balloon Safari</h3>
+          <p class="itin-desc">1.5-hour balloon flight over the plains at first light. Champagne bush breakfast on landing. Afternoon at leisure or optional walking safari with armed ranger.</p>
+        </div>
+      </div>
+      <div class="itin-item">
+        <div class="itin-day">07–09</div>
+        <div>
+          <h3 class="itin-title">Ngorongoro Crater</h3>
+          <p class="itin-desc">Transfer to the Crater Highlands. Full crater descent with private vehicle — black rhino, flamingo flocks, and dense lion concentrations in a 2,000-foot volcanic bowl.</p>
+        </div>
+      </div>
+      <div class="itin-item">
+        <div class="itin-day">10</div>
+        <div>
+          <h3 class="itin-title">Zanzibar Transfer or Departure</h3>
+          <p class="itin-desc">Charter flight to Zanzibar for a 3-night beach extension, or return to Arusha/Kilimanjaro International for onward travel. Full trip documentation and custom photo book included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE TYPES -->
+  <section id="experience-types">
+    <p class="section-tag">How to Book This Trip</p>
+    <h2 class="section-title">This Journey<br>Fits Into.</h2>
+    <div class="exp-type-grid">
+      <a href="adventure.html" class="exp-type-card">
+        <div class="exp-type-icon">⛰️</div>
+        <div>
+          <h3 class="exp-type-title">Adventure Travel</h3>
+          <p class="exp-type-desc">Walking safaris, night drives, and off-road terrain access go deep into the experience category. This is real Africa — not the sanitized version.</p>
+          <span class="exp-type-link">Explore Adventure →</span>
+        </div>
+      </a>
+      <a href="luxury.html" class="exp-type-card">
+        <div class="exp-type-icon">🏛️</div>
+        <div>
+          <h3 class="exp-type-title">Luxury Escapes</h3>
+          <p class="exp-type-desc">Private mobile camps, butler service, gourmet bush dining, and helicopter transfers for guests who want wilderness without sacrificing comfort.</p>
+          <span class="exp-type-link">Explore Luxury →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="dest-cta">
+    <h2 class="cta-title">Ready for<br>the Serengeti?</h2>
+    <p class="cta-sub">We build every safari from scratch. Tell us your travel window and we'll design the access that matches it.</p>
+    <a href="book.html?type=adventure" class="btn-dark">Start Planning</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-logo">RONIN ADVENTURES</div>
+        <p class="footer-brand-desc">World-class travel designed for those who refuse ordinary. Adventure, luxury, and cultural immersion — wherever the world takes you.</p>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Explore</h4>
+        <ul class="footer-links">
+          <li><a href="index.html#destinations">Destinations</a></li>
+          <li><a href="index.html#pillars">What We Do</a></li>
+          <li><a href="index.html#experience">Our Approach</a></li>
+          <li><a href="book.html">Book a Trip</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Experiences</h4>
+        <ul class="footer-links">
+          <li><a href="adventure.html">Adventure Travel</a></li>
+          <li><a href="luxury.html">Luxury Escapes</a></li>
+          <li><a href="cultural.html">Cultural Journeys</a></li>
+          <li><a href="international.html">International</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Plan Your Trip</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Send an Inquiry</a></li>
+          <li><a href="book.html">Book a Journey</a></li>
+          <li><a href="index.html#destinations">Browse Destinations</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Ronin Adventures. All rights reserved. &nbsp;|&nbsp; Website by <a href="https://ronin.digital" target="_blank" style="color:var(--gold);text-decoration:none;">Ronin Digital</a></p>
+      <div class="footer-social">
+        <a href="#" class="social-link" title="Instagram">📸</a>
+        <a href="#" class="social-link" title="Facebook">🌐</a>
+        <a href="#" class="social-link" title="LinkedIn">💼</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    function toggleMenu() {
+      const m = document.getElementById('mobile-nav');
+      m.style.display = m.style.display === 'flex' ? 'none' : 'flex';
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.highlight-card, .itin-item, .o-stat, .info-block, .exp-type-card').forEach(el => {
+      el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity 0.55s ease, transform 0.55s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
