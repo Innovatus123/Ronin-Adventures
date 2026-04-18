@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amalfi Coast, Italy — Ronin Adventures</title>
-  <meta name="description" content="Private villas, Michelin-starred dining, and yacht charters along Italy's most spectacular coastline. Ronin Adventures delivers the Amalfi Coast without the crowds." />
-  <!-- Open Graph -->
+  <title>Dubai, UAE — Ronin Adventures</title>
+  <meta name="description" content="The world's tallest building, desert dune bashing, helicopter views of the Palm, and a luxury tier that redefined the word. Dubai — the city that built itself in a generation." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://roninadventures.com/amalfi.html" />
-  <meta property="og:title" content="Amalfi Coast, Italy — Ronin Adventures" />
-  <meta property="og:description" content="Private villas, yacht charters, and Michelin-starred dining on Italy's most dramatic coastline. No crowds. No compromises." />
-  <meta property="og:image" content="https://roninadventures.com/og-amalfi.jpg" />
+  <meta property="og:url" content="https://roninadventures.com/dubai.html" />
+  <meta property="og:title" content="Dubai, UAE — Ronin Adventures" />
+  <meta property="og:description" content="The world's tallest building, desert dune bashing, helicopter views of the Palm, and a luxury tier that redefined the word. Dubai — the city that built itself in a generation." />
+  <meta property="og:image" content="https://roninadventures.com/og-dubai.jpg" />
   <meta property="og:site_name" content="Ronin Adventures" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Amalfi Coast, Italy — Ronin Adventures" />
-  <meta name="twitter:description" content="Private villas, yacht charters, and Michelin-starred dining on Italy's most dramatic coastline." />
-  <meta name="twitter:image" content="https://roninadventures.com/og-amalfi.jpg" />
+  <meta name="twitter:title" content="Dubai, UAE — Ronin Adventures" />
+  <meta name="twitter:description" content="The world's tallest building, desert dune bashing, helicopter views of the Palm, and a luxury tier that redefined the word. Dubai — the city that built itself in a generation." />
+  <meta name="twitter:image" content="https://roninadventures.com/og-dubai.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -30,13 +29,12 @@
     html { scroll-behavior: smooth; }
     body { background: var(--black); color: var(--white); font-family: var(--ff-body); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
     a { color: inherit; text-decoration: none; }
-
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(10,10,10,0.96); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); transition: padding 0.4s ease; }
     nav.scrolled { padding: 0.85rem 4rem; }
     .nav-logo { font-family: var(--ff-head); font-size: 1.6rem; letter-spacing: 0.12em; color: var(--gold); }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
     .nav-links a { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); transition: color 0.25s; }
-    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
     .nav-dropdown { position: relative; }
     .nav-dropdown > a { display: flex; align-items: center; gap: 0.35rem; }
     .nav-dropdown > a::after { content: '▾'; font-size: 0.6rem; transition: transform 0.25s; }
@@ -47,12 +45,11 @@
     .dropdown-menu a:hover { color: var(--gold) !important; background: rgba(201,168,76,0.07); }
     .dd-icon { font-size: 0.95rem; width: 18px; text-align: center; }
     .nav-cta { background: var(--gold); color: var(--black) !important; padding: 0.55rem 1.4rem; border-radius: 2px; font-weight: 700; transition: background 0.25s !important; }
-    .nav-cta:hover { background: var(--gold-lt) !important; }
+    .nav-cta:hover { background: var(--gold-lt) !important; color: var(--black) !important; }
     .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-    .nav-burger span { display: block; width: 26px; height: 2px; background: var(--white); }
-
+    .nav-burger span { display: block; width: 26px; height: 2px; background: var(--white); transition: all 0.3s; }
     .dest-hero { position: relative; height: 90vh; min-height: 600px; display: flex; align-items: flex-end; overflow: hidden; }
-    .dest-hero-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.85) 100%), url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1800&q=80'); background-size: cover; background-position: center; }
+    .dest-hero-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.85) 100%), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1800&q=80'); background-size: cover; background-position: center; }
     .dest-hero-content { position: relative; z-index: 2; padding: 0 4rem 5rem; width: 100%; }
     .dest-breadcrumb { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
     .dest-breadcrumb a { color: var(--gold); opacity: 0.7; }
@@ -62,13 +59,10 @@
     .dest-hero-title span { color: var(--gold); }
     .dest-hero-tags { display: flex; gap: 0.75rem; flex-wrap: wrap; }
     .dest-hero-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; background: var(--gold); color: var(--black); padding: 0.35rem 0.9rem; border-radius: 1px; }
-    .dest-hero-icon { position: absolute; right: 8%; top: 50%; transform: translateY(-50%); font-size: 9rem; opacity: 0.12; pointer-events: none; }
-
     section { padding: 6rem 4rem; }
     .section-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
     .section-tag::before { content: ''; display: inline-block; width: 28px; height: 2px; background: var(--gold); }
     .section-title { font-family: var(--ff-head); font-size: clamp(2.5rem, 4.5vw, 4rem); line-height: 0.95; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 1.5rem; }
-
     #overview { background: var(--dark); border-top: 1px solid var(--border); }
     .overview-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: start; }
     .overview-body { font-size: 0.95rem; font-weight: 300; color: rgba(244,244,244,0.72); line-height: 1.85; margin-bottom: 2rem; }
@@ -81,7 +75,6 @@
     .info-block-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
     .info-block-value { font-size: 0.88rem; color: var(--white); font-weight: 600; margin-bottom: 0.35rem; }
     .info-block-note { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
-
     #highlights { background: var(--black); }
     .highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--border); margin-top: 3rem; }
     .highlight-card { background: var(--card); padding: 2.25rem 2rem; position: relative; overflow: hidden; }
@@ -90,14 +83,12 @@
     .h-icon { font-size: 2rem; margin-bottom: 1.25rem; display: block; }
     .h-title { font-family: var(--ff-head); font-size: 1.3rem; letter-spacing: 0.06em; color: var(--white); margin-bottom: 0.65rem; }
     .h-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
-
     #itinerary { background: var(--dark); border-top: 1px solid var(--border); }
     .itinerary-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 1px; background: var(--border); }
     .itin-item { background: var(--card); display: grid; grid-template-columns: 80px 1fr; gap: 2rem; align-items: start; padding: 2rem 2rem 2rem 0; }
     .itin-day { font-family: var(--ff-head); font-size: 2.5rem; color: var(--gold); letter-spacing: 0.05em; text-align: center; padding-left: 2rem; }
     .itin-title { font-family: var(--ff-head); font-size: 1.2rem; letter-spacing: 0.06em; color: var(--white); margin-bottom: 0.5rem; }
     .itin-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
-
     #experience-types { background: var(--black); }
     .exp-type-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
     .exp-type-card { background: var(--card); border: 1px solid var(--border); padding: 2rem; display: flex; gap: 1.25rem; align-items: flex-start; transition: border-color 0.3s; }
@@ -106,34 +97,44 @@
     .exp-type-title { font-family: var(--ff-head); font-size: 1.1rem; letter-spacing: 0.06em; color: var(--white); margin-bottom: 0.4rem; }
     .exp-type-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.65; }
     .exp-type-link { display: inline-block; margin-top: 0.75rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
-
     #dest-cta { background: var(--gold); padding: 6rem 4rem; text-align: center; }
     .cta-title { font-family: var(--ff-head); font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 0.95; letter-spacing: 0.04em; text-transform: uppercase; color: var(--black); margin-bottom: 1.25rem; }
     .cta-sub { font-size: 0.95rem; color: rgba(0,0,0,0.65); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.75; }
     .btn-dark { background: var(--black); color: var(--gold); font-family: var(--ff-body); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 1rem 2.5rem; border: none; border-radius: 2px; cursor: pointer; transition: background 0.25s, transform 0.2s; display: inline-block; }
     .btn-dark:hover { background: #1f1f1f; transform: translateY(-2px); }
-
-    footer { background: var(--black); border-top: 1px solid var(--border); padding: 3.5rem 4rem 2rem; }
+    footer { background: var(--black); border-top: 1px solid var(--border); padding: 4rem 4rem 2.5rem; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 3.5rem; padding-bottom: 3.5rem; border-bottom: 1px solid var(--border); }
+    .footer-brand-logo { font-family: var(--ff-head); font-size: 2rem; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 1rem; }
+    .footer-brand-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.75; max-width: 280px; }
+    .footer-col-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--white); margin-bottom: 1.4rem; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .footer-links a { font-size: 0.82rem; color: var(--muted); transition: color 0.25s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
     .footer-copy { font-size: 0.72rem; color: var(--muted); }
-
+    .footer-social { display: flex; gap: 1rem; }
+    .social-link { width: 36px; height: 36px; border: 1px solid var(--border); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: var(--muted); transition: border-color 0.25s, color 0.25s; }
+    .social-link:hover { border-color: var(--gold); color: var(--gold); }
     @media (max-width: 768px) {
       nav { padding: 1.25rem 1.5rem; }
       nav.scrolled { padding: 0.85rem 1.5rem; }
       .nav-links { display: none; }
       .nav-burger { display: flex; }
       .dest-hero-content { padding: 0 1.5rem 4rem; }
-      .dest-hero-icon { display: none; }
       section { padding: 4rem 1.5rem; }
       .overview-grid { grid-template-columns: 1fr; gap: 3rem; }
       .highlights-grid { grid-template-columns: 1fr; }
       .exp-type-grid { grid-template-columns: 1fr; }
       #dest-cta { padding: 4rem 1.5rem; }
       footer { padding: 2.5rem 1.5rem 1.5rem; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 480px) {
+      .footer-top { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-
   <nav id="navbar">
     <a href="index.html" class="nav-logo">RONIN<span style="color:var(--white);opacity:0.4"> / </span>ADVENTURES</a>
     <ul class="nav-links">
@@ -159,9 +160,10 @@
       <li><a href="contact.html">Contact</a></li>
       <li><a href="book.html" class="nav-cta">Book Now</a></li>
     </ul>
-    <div class="nav-burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    <div class="nav-burger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
   </nav>
-
   <div id="mobile-nav" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(10,10,10,0.98);padding:6rem 2rem 2rem;flex-direction:column;gap:2rem;">
     <a href="index.html#destinations" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;letter-spacing:0.08em;color:var(--white);">Destinations</a>
     <div style="display:flex;flex-direction:column;gap:0.85rem;">
@@ -171,178 +173,157 @@
       <a href="cultural.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">🌏 &nbsp;Cultural</a>
       <a href="international.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">✈️ &nbsp;International</a>
     </div>
-    <div style="display:flex;flex-direction:column;gap:0.85rem;">
-      <span style="font-family:var(--ff-head);font-size:2.5rem;color:var(--white);">Experiences</span>
-      <a href="adventure.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">⛰️ &nbsp;Adventure</a>
-      <a href="luxury.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">🏛️ &nbsp;Luxury</a>
-      <a href="cultural.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">🌏 &nbsp;Cultural</a>
-      <a href="international.html" onclick="toggleMenu()" style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-left:1rem;">✈️ &nbsp;International</a>
-    </div>
-    <a href="contact.html" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;color:var(--white);">Contact</a>
-    <a href="book.html" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;color:var(--gold);">Book Now</a>
+    <a href="contact.html" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;letter-spacing:0.08em;color:var(--white);">Contact</a>
+    <a href="book.html" onclick="toggleMenu()" style="font-family:var(--ff-head);font-size:2.5rem;letter-spacing:0.08em;color:var(--gold);">Book Now</a>
     <button onclick="toggleMenu()" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;">✕</button>
   </div>
-
   <div class="dest-hero">
     <div class="dest-hero-bg"></div>
-    <div class="dest-hero-icon">🗼</div>
     <div class="dest-hero-content">
       <p class="dest-breadcrumb">
         <a href="index.html">Home</a> <span>›</span>
         <a href="index.html#destinations">Destinations</a> <span>›</span>
-        <span style="opacity:1;">Amalfi Coast</span>
+        <span style="opacity:1;">Dubai, UAE</span>
       </p>
-      <p class="dest-hero-region">Western Europe · Italy</p>
-      <h1 class="dest-hero-title">Amalfi<br><span>Coast</span></h1>
-      <div class="dest-hero-tags">
-        <span class="dest-hero-tag">Luxury</span>
-        <span class="dest-hero-tag">Cultural</span>
-        <span class="dest-hero-tag">Coastal</span>
-      </div>
+      <p class="dest-hero-region">Middle East · UAE</p>
+      <h1 class="dest-hero-title">Dubai,<br><span>UAE</span></h1>
+      <div class="dest-hero-tags"><span class="dest-hero-tag">Luxury</span><span class="dest-hero-tag">Urban</span><span class="dest-hero-tag">Adventure</span></div>
     </div>
   </div>
-
   <section id="overview">
     <div class="overview-grid">
       <div>
         <p class="section-tag">Destination Overview</p>
-        <h2 class="section-title">Italy's Most<br>Dramatic Shore.</h2>
-        <p class="overview-body">
-          The Amalfi Coast stretches 50 kilometers along the southern edge of the Sorrentine Peninsula — clifftop villages in impossible colors, cerulean water below, lemons the size of your fist. It is one of the most visually arresting places on Earth, and one of the most visited. The difference is how you experience it.
-        </p>
-        <p class="overview-body">
-          Ronin Adventures books you into private villas above the tourist line, arranges private boat access before the day crowds arrive, and connects you with local families who have worked the terraced farms and fishing coves for generations. The Amalfi everyone dreams of — not the one they settle for.
-        </p>
+        <h2 class="section-title">Built in<br>One Generation.</h2>
+        <p class="overview-body">In 1960, Dubai was a small pearl-diving town of 40,000 people. Today it has the world's tallest building, the world's largest mall, and an airport that serves 90 million passengers per year. The entire modern city was constructed in less than 60 years — the fastest urban transformation in recorded history.</p>
+        <p class="overview-body">Ronin Adventures designs Dubai itineraries that take both sides seriously: the ultra-modern (Burj Khalifa Atmosphere restaurant, private Palm helicopter tour, indoor ski slope in 40°C heat) and the old (Al Fahidi historical district, gold and spice souks by abra, and a desert camp in the Empty Quarter that predates the city by 40,000 years).</p>
         <div class="overview-stats">
           <div class="o-stat">
-            <div class="o-stat-num">50km</div>
-            <div class="o-stat-label">Of UNESCO coastline</div>
+            <div class="o-stat-num">828m</div>
+            <div class="o-stat-label">Height of the Burj Khalifa — world's tallest</div>
           </div>
           <div class="o-stat">
-            <div class="o-stat-num">13</div>
-            <div class="o-stat-label">Clifftop villages</div>
+            <div class="o-stat-num">90m</div>
+            <div class="o-stat-label">Passengers through Dubai Airport annually</div>
           </div>
           <div class="o-stat">
-            <div class="o-stat-num">3★+</div>
-            <div class="o-stat-label">Michelin restaurants nearby</div>
+            <div class="o-stat-num">60</div>
+            <div class="o-stat-label">Years to build the modern city</div>
           </div>
           <div class="o-stat">
-            <div class="o-stat-num">1000</div>
-            <div class="o-stat-label">Years of maritime history</div>
+            <div class="o-stat-num">55°C</div>
+            <div class="o-stat-label">Maximum recorded desert temperature</div>
           </div>
         </div>
       </div>
       <div class="info-blocks">
         <div class="info-block">
           <p class="info-block-label">Best Time to Visit</p>
-          <p class="info-block-value">May – June / September – October</p>
-          <p class="info-block-note">Shoulder season delivers warm water, manageable crowds, and open restaurants. July and August are peak season — we book villas well in advance.</p>
+          <p class="info-block-value">November – March</p>
+          <p class="info-block-note">Comfortable 20–28°C temperatures and outdoor activity season. Summer (June–September) is 40–50°C — the city still functions perfectly but outdoor time is limited.</p>
         </div>
         <div class="info-block">
           <p class="info-block-label">Duration</p>
-          <p class="info-block-value">5 – 10 days recommended</p>
-          <p class="info-block-note">Ideal as a standalone or combined with Rome, Naples, or the Aeolian Islands for a broader Southern Italy circuit.</p>
+          <p class="info-block-value">4 – 7 days</p>
+          <p class="info-block-note">Dubai requires 3 days minimum for the highlights. Add Abu Dhabi (Louvre, Sheikh Zayed Mosque, Formula 1 circuit) as a 2-day extension. Desert overnight is non-negotiable for the full experience.</p>
         </div>
         <div class="info-block">
-          <p class="info-block-label">Base Options</p>
-          <p class="info-block-value">Ravello / Positano / Praiano</p>
-          <p class="info-block-note">Ravello sits above the fray — stunning views, fewer day-trippers. Positano for the iconic scene. Praiano for true seclusion and local authenticity.</p>
+          <p class="info-block-label">Experience Level</p>
+          <p class="info-block-value">All levels</p>
+          <p class="info-block-note">No physical demands for the luxury circuit. Desert dune bashing and sandboarding are available for adventure guests.</p>
         </div>
         <div class="info-block">
-          <p class="info-block-label">Getting There</p>
-          <p class="info-block-value">Naples International (NAP)</p>
-          <p class="info-block-note">1.5 hours by private transfer. We arrange helicopter transfers from Naples for guests who prefer a 20-minute arrival with views en route.</p>
+          <p class="info-block-label">Entry Requirements</p>
+          <p class="info-block-value">Visa on arrival or visa-free for most Western passports</p>
+          <p class="info-block-note">US, EU, UK, and most Western passports enter the UAE visa-free or on arrival. We manage all private access bookings and helicopter permits.</p>
         </div>
       </div>
     </div>
   </section>
-
   <section id="highlights">
     <p class="section-tag">What We Include</p>
-    <h2 class="section-title">Amalfi<br>Highlights</h2>
+    <h2 class="section-title">Dubai<br>Highlights</h2>
     <div class="highlights-grid">
       <div class="highlight-card">
-        <span class="h-icon">🏛️</span>
-        <h3 class="h-title">Private Clifftop Villas</h3>
-        <p class="h-desc">Handpicked historic villas with infinity pools, lemon groves, and unobstructed sea views. Full staff included — chef, housekeeper, and concierge — for the duration of your stay.</p>
+        <span class="h-icon">🏙️</span>
+        <h3 class="h-title">Burj Khalifa Level 148</h3>
+        <p class="h-desc">The Atmosphere restaurant on the 122nd floor and the At the Top Sky observation deck on the 148th — 828 meters above the desert floor. Private sunset reservation.</p>
       </div>
       <div class="highlight-card">
-        <span class="h-icon">⛵</span>
-        <h3 class="h-title">Private Yacht Charters</h3>
-        <p class="h-desc">Explore grottos, coves, and sea stacks unreachable by land. Anchor at Capri's Blue Grotto at sunrise before the tour boats arrive. Lunch served onboard.</p>
+        <span class="h-icon">🚁</span>
+        <h3 class="h-title">Palm Jumeirah Helicopter</h3>
+        <p class="h-desc">30-minute private helicopter circuit of the Palm, Downtown Dubai, and the Creek at sunset — the only way to comprehend the scale of what was built.</p>
       </div>
       <div class="highlight-card">
-        <span class="h-icon">🍋</span>
-        <h3 class="h-title">Limoncello & Farm Access</h3>
-        <p class="h-desc">Visit working terraced lemon farms, meet the families who have cultivated Sfusato amalfitano for centuries, and press your own limoncello in a private session.</p>
+        <span class="h-icon">🐪</span>
+        <h3 class="h-title">Empty Quarter Desert Camp</h3>
+        <p class="h-desc">A private 4WD convoy into the Rub' al Khali — the world's largest continuous sand desert (650,000 sq km). Overnight Bedouin-style camp with no artificial light.</p>
       </div>
       <div class="highlight-card">
-        <span class="h-icon">🍽️</span>
-        <h3 class="h-title">Michelin Dining Reservations</h3>
-        <p class="h-desc">We hold preferred booking relationships with starred restaurants across the region. Tables that are unavailable publicly — secured in advance for Ronin clients.</p>
+        <span class="h-icon">🚤</span>
+        <h3 class="h-title">Dubai Marina Yacht Charter</h3>
+        <p class="h-desc">A private yacht through Dubai Marina — the world's largest man-made marina — and along the JBR beachfront at sunset. Dinner served on deck with Burj Al Arab views.</p>
       </div>
       <div class="highlight-card">
-        <span class="h-icon">🏊</span>
-        <h3 class="h-title">Hidden Beaches & Grottos</h3>
-        <p class="h-desc">The coast's most secluded swimming spots — accessible only by boat. We know which ones face west for sunset, which grottos glow turquoise at midday.</p>
+        <span class="h-icon">🏺</span>
+        <h3 class="h-title">Old Dubai & the Souks</h3>
+        <p class="h-desc">Al Fahidi historical district — wind-tower architecture unchanged since 1900. Abra ferry across the Creek to the gold souk (1,000+ jewelry shops) and spice souk at 7 AM.</p>
       </div>
       <div class="highlight-card">
-        <span class="h-icon">🎨</span>
-        <h3 class="h-title">Ravello Cultural Access</h3>
-        <p class="h-desc">Private tours of Villa Rufolo and Villa Cimbrone after hours. Access to the Ravello Festival program, including private concerts in ancient garden settings.</p>
+        <span class="h-icon">⛷️</span>
+        <h3 class="h-title">Ski Dubai</h3>
+        <p class="h-desc">An Olympic-size indoor ski slope at −4°C inside a 40°C city — with real snow, a chairlift, and penguins. One of the more surreal 2 hours available in any city on Earth.</p>
       </div>
     </div>
   </section>
-
   <section id="itinerary">
     <p class="section-tag">Sample Journey</p>
-    <h2 class="section-title">7 Days on<br>the Amalfi Coast.</h2>
+    <h2 class="section-title">6 Days in Dubai.</h2>
     <div class="itinerary-list">
       <div class="itin-item">
         <div class="itin-day">01</div>
         <div>
-          <h3 class="itin-title">Arrival into Naples</h3>
-          <p class="itin-desc">Private helicopter transfer to your clifftop villa in Ravello. Welcome dinner prepared by your private chef featuring hyper-local Campanian ingredients. Evening on the terrace.</p>
+          <h3 class="itin-title">Dubai Arrival</h3>
+          <p class="itin-desc">Private transfer from Dubai International. Check-in to a suite on Burj Khalifa levels. Evening At the Top Sky observation deck at sunset — 828m, 360° desert panorama.</p>
         </div>
       </div>
       <div class="itin-item">
         <div class="itin-day">02</div>
         <div>
-          <h3 class="itin-title">Coastal Yacht Day</h3>
-          <p class="itin-desc">Full-day private yacht charter. Positano harbor, the Grotta dello Smeraldo, lunch at anchor near Capri's Faraglioni stacks. Return to villa at sunset.</p>
+          <h3 class="itin-title">Modern Dubai</h3>
+          <p class="itin-desc">Burj Khalifa Atmosphere restaurant for breakfast (122nd floor). Private helicopter Palm circuit. Afternoon at the Dubai Mall — Aquarium, ice rink, and the world's largest fountain at dusk.</p>
         </div>
       </div>
       <div class="itin-item">
         <div class="itin-day">03</div>
         <div>
-          <h3 class="itin-title">Amalfi Town & Lemon Farms</h3>
-          <p class="itin-desc">Private guide through Amalfi's historic streets before crowds. Duomo visit with a local art historian. Afternoon at a working lemon terrace for private tasting and limoncello session.</p>
+          <h3 class="itin-title">Old Dubai & Souks</h3>
+          <p class="itin-desc">7 AM abra ferry to the gold souk before it opens. Spice souk. Al Fahidi historical district with an architectural historian guide. Lunch in a traditional Arabic courtyard restaurant.</p>
         </div>
       </div>
       <div class="itin-item">
         <div class="itin-day">04</div>
         <div>
-          <h3 class="itin-title">Capri & Blue Grotto</h3>
-          <p class="itin-desc">Arrive at the Blue Grotto at 7am before public opening. Full island day with private driver — Villa Jovis, artisan lunch in Anacapri, sunset aperitivo at a clifftop bar.</p>
+          <h3 class="itin-title">Desert Overnight</h3>
+          <p class="itin-desc">Private 4WD convoy into the Empty Quarter. Dune bashing, sandboarding, and camel riding. Sunset over the dune sea. Bedouin-style camp with a private chef and traditional Arabic hospitality.</p>
         </div>
       </div>
       <div class="itin-item">
         <div class="itin-day">05</div>
         <div>
-          <h3 class="itin-title">Ravello Cultural Day</h3>
-          <p class="itin-desc">After-hours access to Villa Cimbrone gardens. Private concert in the Belvedere of Infinity if Ravello Festival is running. Michelin dinner reservation at Don Alfonso 1890.</p>
+          <h3 class="itin-title">Abu Dhabi Day Trip</h3>
+          <p class="itin-desc">Private vehicle to Abu Dhabi. Sheikh Zayed Grand Mosque (world's third largest). Louvre Abu Dhabi (private curator access). Yas Marina Circuit F1 track walk.</p>
         </div>
       </div>
       <div class="itin-item">
-        <div class="itin-day">06–07</div>
+        <div class="itin-day">06</div>
         <div>
-          <h3 class="itin-title">Leisure & Departure</h3>
-          <p class="itin-desc">Optional morning on the Sentiero degli Dei hiking trail or time at leisure at the villa. Private transfer to Naples for onward travel or extension to Rome or Sicily.</p>
+          <h3 class="itin-title">Departure</h3>
+          <p class="itin-desc">Morning at leisure — Dubai Marina yacht breakfast. Private transfer to Dubai International for onward connections.</p>
         </div>
       </div>
     </div>
   </section>
-
   <section id="experience-types">
     <p class="section-tag">How to Book This Trip</p>
     <h2 class="section-title">This Journey<br>Fits Into.</h2>
@@ -351,27 +332,25 @@
         <div class="exp-type-icon">🏛️</div>
         <div>
           <h3 class="exp-type-title">Luxury Escapes</h3>
-          <p class="exp-type-desc">Private villas, white-glove concierge, Michelin dining, and helicopter transfers. The Amalfi Coast at the level it was built to be experienced.</p>
+          <p class="exp-type-desc">The Burj Khalifa, private yacht charters, and helicopter city circuits are Dubai's defining luxury experiences.</p>
           <span class="exp-type-link">Explore Luxury →</span>
         </div>
       </a>
-      <a href="cultural.html" class="exp-type-card">
-        <div class="exp-type-icon">🌏</div>
+      <a href="international.html" class="exp-type-card">
+        <div class="exp-type-icon">✈️</div>
         <div>
-          <h3 class="exp-type-title">Cultural Journeys</h3>
-          <p class="exp-type-desc">Local artisan access, private art history tours, farm families, and culinary immersions that go well beyond what a hotel concierge can book.</p>
-          <span class="exp-type-link">Explore Cultural →</span>
+          <h3 class="exp-type-title">International Travel</h3>
+          <p class="exp-type-desc">Dubai sits at the crossroads of every long-haul flight path connecting Europe, Africa, Asia, and beyond.</p>
+          <span class="exp-type-link">Explore International →</span>
         </div>
       </a>
     </div>
   </section>
-
   <section id="dest-cta">
-    <h2 class="cta-title">Ready for<br>the Amalfi Coast?</h2>
-    <p class="cta-sub">Tell us your dates and preferred pace — we'll design the coast as it was meant to be experienced.</p>
+    <h2 class="cta-title">Ready for<br>Dubai?</h2>
+    <p class="cta-sub">Helicopter permits and Empty Quarter camp logistics require advance planning. Tell us your travel window.</p>
     <a href="book.html?type=luxury" class="btn-dark">Start Planning</a>
   </section>
-
   <footer>
     <div class="footer-top">
       <div>
@@ -414,13 +393,24 @@
       </div>
     </div>
   </footer>
-
   <script>
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
-    function toggleMenu() { const m = document.getElementById('mobile-nav'); m.style.display = m.style.display === 'flex' ? 'none' : 'flex'; }
-    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; observer.unobserve(e.target); } }); }, { threshold: 0.1 });
-    document.querySelectorAll('.highlight-card, .itin-item, .o-stat, .info-block, .exp-type-card').forEach(el => { el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity 0.55s ease, transform 0.55s ease'; observer.observe(el); });
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    function toggleMenu() {
+      const m = document.getElementById('mobile-nav');
+      m.style.display = m.style.display === 'flex' ? 'none' : 'flex';
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.highlight-card, .itin-item, .o-stat, .info-block, .exp-type-card').forEach(el => {
+      el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity 0.55s ease, transform 0.55s ease';
+      observer.observe(el);
+    });
   </script>
 </body>
 </html>
